@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - Chaitra Soft Admin</title>
+  <link rel="icon" type="image/jpeg" href="../assets/logo.jpeg" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+  <link href="admin-style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <img src="../assets/logo.jpeg" alt="Logo" />
+        <div>
+          <span>Chaitra Soft</span>
+          <small>Admin Panel</small>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+        <a href="jobs.html"><i class="fas fa-briefcase"></i> Job Openings</a>
+        <a href="submissions.html"><i class="fas fa-file-lines"></i> Submissions</a>
+        <a href="clients.html"><i class="fas fa-building"></i> Client Logos</a>
+        <a href="reviews.html"><i class="fas fa-star"></i> Testimonials</a>
+        <a href="settings.html"><i class="fas fa-gear"></i> Settings</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="#" id="logoutBtn"><i class="fas fa-right-from-bracket"></i> Sign Out</a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay"></div>
+
+    <div class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger"><i class="fas fa-bars"></i></button>
+          <h1 class="topbar-title">Dashboard</h1>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-user">
+            <span>Admin</span>
+            <div class="topbar-avatar">A</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <div class="page-header">
+          <div>
+            <h2>Welcome back, Admin!</h2>
+            <p>Here's what's happening with your website today.</p>
+          </div>
+        </div>
+
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card stat-blue">
+            <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="stat-label">Job Openings</div>
+            <div class="stat-value" id="statJobs">-</div>
+            <div class="stat-desc" id="statJobsDesc">active jobs</div>
+          </div>
+          <div class="stat-card stat-green">
+            <div class="stat-icon"><i class="fas fa-file-lines"></i></div>
+            <div class="stat-label">Submissions</div>
+            <div class="stat-value" id="statSubmissions">-</div>
+            <div class="stat-desc" id="statSubmissionsDesc">total submissions</div>
+          </div>
+          <div class="stat-card stat-purple">
+            <div class="stat-icon"><i class="fas fa-building"></i></div>
+            <div class="stat-label">Client Logos</div>
+            <div class="stat-value" id="statClients">-</div>
+            <div class="stat-desc" id="statClientsDesc">active logos</div>
+          </div>
+          <div class="stat-card stat-amber">
+            <div class="stat-icon"><i class="fas fa-star"></i></div>
+            <div class="stat-label">Testimonials</div>
+            <div class="stat-value" id="statTestimonials">-</div>
+            <div class="stat-desc" id="statTestimonialsDesc">published</div>
+          </div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fas fa-clock" style="color:var(--primary);margin-right:8px;"></i>Recent Submissions</h3>
+              <a href="submissions.html" class="btn btn-secondary btn-sm">View All</a>
+            </div>
+            <div class="card-body" id="recentSubmissions">
+              <div class="loading-text">Loading...</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fas fa-bolt" style="color:var(--warning);margin-right:8px;"></i>Active Job Openings</h3>
+              <a href="jobs.html" class="btn btn-secondary btn-sm">View All</a>
+            </div>
+            <div class="card-body" id="recentJobs">
+              <div class="loading-text">Loading...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="admin-script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const jobs = getData('chaitra_jobs', []);
+      const submissions = getData('chaitra_submissions', []);
+      const clients = getData('chaitra_clients', []);
+      const testimonials = getData('chaitra_testimonials', []);
+
+      const activeJobs = jobs.filter(j => j.active);
+      const unread = submissions.filter(s => !s.read);
+      const activeClients = clients.filter(c => c.active);
+      const activeTestimonials = testimonials.filter(t => t.active);
+
+      animateCounter(document.getElementById('statJobs'), activeJobs.length);
+      document.getElementById('statJobsDesc').textContent = `${activeJobs.length} active / ${jobs.length} total`;
+
+      animateCounter(document.getElementById('statSubmissions'), submissions.length);
+      document.getElementById('statSubmissionsDesc').textContent = `${unread.length} unread / ${submissions.length} total`;
+
+      animateCounter(document.getElementById('statClients'), activeClients.length);
+      document.getElementById('statClientsDesc').textContent = `${activeClients.length} active`;
+
+      animateCounter(document.getElementById('statTestimonials'), activeTestimonials.length);
+      document.getElementById('statTestimonialsDesc').textContent = `${activeTestimonials.length} published`;
+
+      // Recent submissions
+      const recentEl = document.getElementById('recentSubmissions');
+      const recentSubs = submissions.slice(0, 5);
+      if (recentSubs.length === 0) {
+        recentEl.innerHTML = '<div class="empty-state"><i class="fas fa-inbox"></i><h3>No submissions yet</h3></div>';
+      } else {
+        recentEl.innerHTML = recentSubs.map(s => `
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);">
+            <div>
+              <div style="font-weight:500;font-size:13px;">${s.name}</div>
+              <div style="font-size:12px;color:var(--text-muted);">${s.formType} ${!s.read ? '<span class="badge badge-blue">New</span>' : ''}</div>
+            </div>
+            <div style="font-size:11px;color:var(--text-light);">${timeAgo(s.createdAt)}</div>
+          </div>
+        `).join('');
+      }
+
+      // Recent jobs
+      const jobsEl = document.getElementById('recentJobs');
+      const recentJobsList = jobs.slice(0, 5);
+      if (recentJobsList.length === 0) {
+        jobsEl.innerHTML = '<div class="empty-state"><i class="fas fa-briefcase"></i><h3>No jobs posted yet</h3></div>';
+      } else {
+        jobsEl.innerHTML = recentJobsList.map(j => `
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);">
+            <div>
+              <div style="font-weight:500;font-size:13px;">${j.title}</div>
+              <div style="font-size:12px;color:var(--text-muted);">${j.location} &middot; ${j.type}</div>
+            </div>
+            <span class="badge ${j.active ? 'badge-green' : 'badge-slate'}">${j.active ? 'Active' : 'Inactive'}</span>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

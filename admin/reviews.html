@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials - Chaitra Soft Admin</title>
+  <link rel="icon" type="image/jpeg" href="../assets/logo.jpeg" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+  <link href="admin-style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <img src="../assets/logo.jpeg" alt="Logo" />
+        <div>
+          <span>Chaitra Soft</span>
+          <small>Admin Panel</small>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+        <a href="jobs.html"><i class="fas fa-briefcase"></i> Job Openings</a>
+        <a href="submissions.html"><i class="fas fa-file-lines"></i> Submissions</a>
+        <a href="clients.html"><i class="fas fa-building"></i> Client Logos</a>
+        <a href="reviews.html"><i class="fas fa-star"></i> Testimonials</a>
+        <a href="settings.html"><i class="fas fa-gear"></i> Settings</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="#" id="logoutBtn"><i class="fas fa-right-from-bracket"></i> Sign Out</a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay"></div>
+
+    <div class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger"><i class="fas fa-bars"></i></button>
+          <h1 class="topbar-title">Testimonials</h1>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-user">
+            <span>Admin</span>
+            <div class="topbar-avatar">A</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <div class="page-header">
+          <div>
+            <h2>Testimonials</h2>
+            <p id="testimonialsCount">Manage client testimonials</p>
+          </div>
+          <button class="btn btn-primary" onclick="showTestimonialModal()"><i class="fas fa-plus"></i> New Testimonial</button>
+        </div>
+
+        <div id="alertContainer"></div>
+
+        <div id="testimonialsGrid" class="grid-cards"></div>
+        <div id="testimonialsEmpty" class="empty-state" style="display:none;">
+          <i class="fas fa-star"></i>
+          <h3>No testimonials yet</h3>
+          <p>Click "New Testimonial" to add your first review.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Testimonial Modal -->
+  <div id="testimonialModal" class="modal-overlay" style="display:none;">
+    <div class="modal-box" style="max-width:550px;">
+      <h3 id="testimonialModalTitle">New Testimonial</h3>
+      <form id="testimonialForm" style="margin-top:16px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="testName" required />
+          </div>
+          <div class="form-group">
+            <label>Rating</label>
+            <select id="testRating">
+              <option value="5">5 - Excellent</option>
+              <option value="4">4 - Great</option>
+              <option value="3">3 - Good</option>
+              <option value="2">2 - Fair</option>
+              <option value="1">1 - Poor</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Role</label>
+            <input type="text" id="testRole" />
+          </div>
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" id="testCompany" />
+          </div>
+          <div class="form-group" style="grid-column:1/-1;">
+            <label>Content</label>
+            <textarea id="testContent" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <label>Sort Order</label>
+            <input type="number" id="testSortOrder" value="0" />
+          </div>
+          <div class="form-group" style="display:flex;align-items:center;gap:8px;padding-top:24px;">
+            <input type="checkbox" id="testActive" checked />
+            <label for="testActive" style="margin:0;">Active</label>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px;">
+          <button type="button" class="btn btn-secondary" onclick="closeTestimonialModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="admin-script.js"></script>
+  <script>
+    let editingTestimonialId = null;
+
+    function renderTestimonials() {
+      const testimonials = getData('chaitra_testimonials', []);
+      document.getElementById('testimonialsCount').textContent = `${testimonials.length} testimonial${testimonials.length !== 1 ? 's' : ''}`;
+      const grid = document.getElementById('testimonialsGrid');
+      const empty = document.getElementById('testimonialsEmpty');
+      if (testimonials.length === 0) {
+        grid.innerHTML = '';
+        empty.style.display = 'block';
+        return;
+      }
+      empty.style.display = 'none';
+      grid.innerHTML = testimonials.sort((a,b) => a.sortOrder - b.sortOrder).map(t => `
+        <div class="grid-item testimonial-card">
+          <div class="grid-body">
+            <div class="test-header">
+              <div class="avatar">${t.name.charAt(0).toUpperCase()}</div>
+              <div>
+                <h4 style="font-size:14px;font-weight:600;">${t.name}</h4>
+                <div style="font-size:12px;color:var(--text-muted);">${t.role}${t.company ? `, ${t.company}` : ''}</div>
+                <div class="stars">${'<i class="fas fa-star"></i>'.repeat(t.rating)}${'<i class="far fa-star"></i>'.repeat(5-t.rating)}</div>
+              </div>
+            </div>
+            <div class="test-content">${t.content}</div>
+            <div style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap;">
+              <span class="badge ${t.active ? 'badge-green' : 'badge-slate'}">${t.active ? 'Published' : 'Draft'}</span>
+              <span class="badge badge-slate">Order: ${t.sortOrder}</span>
+            </div>
+          </div>
+          <div class="grid-footer">
+            <button class="btn-icon edit" onclick="editTestimonial('${t.id}')" title="Edit"><i class="fas fa-pen"></i></button>
+            <button class="btn-icon delete" onclick="deleteTestimonial('${t.id}')" title="Delete"><i class="fas fa-trash"></i></button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function showTestimonialModal(data = null) {
+      editingTestimonialId = data ? data.id : null;
+      document.getElementById('testimonialModalTitle').textContent = data ? 'Edit Testimonial' : 'New Testimonial';
+      document.getElementById('testName').value = data ? data.name : '';
+      document.getElementById('testRating').value = data ? data.rating : 5;
+      document.getElementById('testRole').value = data ? data.role : '';
+      document.getElementById('testCompany').value = data ? data.company : '';
+      document.getElementById('testContent').value = data ? data.content : '';
+      document.getElementById('testSortOrder').value = data ? data.sortOrder : 0;
+      document.getElementById('testActive').checked = data ? data.active : true;
+      document.getElementById('testimonialModal').style.display = 'flex';
+    }
+
+    function closeTestimonialModal() {
+      document.getElementById('testimonialModal').style.display = 'none';
+      editingTestimonialId = null;
+    }
+
+    document.getElementById('testimonialForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const testimonials = getData('chaitra_testimonials', []);
+      const data = {
+        name: document.getElementById('testName').value,
+        rating: parseInt(document.getElementById('testRating').value) || 5,
+        role: document.getElementById('testRole').value,
+        company: document.getElementById('testCompany').value,
+        content: document.getElementById('testContent').value,
+        sortOrder: parseInt(document.getElementById('testSortOrder').value) || 0,
+        active: document.getElementById('testActive').checked,
+      };
+
+      if (editingTestimonialId) {
+        const idx = testimonials.findIndex(t => t.id === editingTestimonialId);
+        if (idx > -1) testimonials[idx] = { ...testimonials[idx], ...data };
+        setData('chaitra_testimonials', testimonials);
+        toast('Testimonial updated!', 'success');
+      } else {
+        data.id = generateId();
+        data.createdAt = new Date().toISOString();
+        testimonials.push(data);
+        setData('chaitra_testimonials', testimonials);
+        toast('Testimonial added!', 'success');
+      }
+      closeTestimonialModal();
+      renderTestimonials();
+    });
+
+    function editTestimonial(id) {
+      const testimonials = getData('chaitra_testimonials', []);
+      const t = testimonials.find(x => x.id === id);
+      if (t) showTestimonialModal(t);
+    }
+
+    async function deleteTestimonial(id) {
+      const confirmed = await confirmAction('Delete this testimonial?');
+      if (!confirmed) return;
+      let testimonials = getData('chaitra_testimonials', []);
+      testimonials = testimonials.filter(t => t.id !== id);
+      setData('chaitra_testimonials', testimonials);
+      renderTestimonials();
+      toast('Testimonial deleted.', 'info');
+    }
+
+    document.addEventListener('DOMContentLoaded', renderTestimonials);
+  </script>
+</body>
+</html>

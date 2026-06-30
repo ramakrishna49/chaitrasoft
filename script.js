@@ -126,7 +126,33 @@ function initStaffingAnimations() {
 }
 
 // ============================================
-// CONTACT FORM VALIDATION
+// ADMIN INTEGRATION - localStorage helpers
+// ============================================
+function getData(key, fallback = []) {
+  try { return JSON.parse(localStorage.getItem(key)) || fallback; } catch { return fallback; }
+}
+
+function setData(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+function generateId() {
+  return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+}
+
+function timeAgo(dateStr) {
+  const diff = Date.now() - new Date(dateStr).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return 'just now';
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  const days = Math.floor(hrs / 24);
+  return `${days}d ago`;
+}
+
+// ============================================
+// CONTACT FORM VALIDATION + ADMIN SAVE
 // ============================================
 function initContactForm() {
   const form = document.getElementById('contactForm');
@@ -151,11 +177,139 @@ function initContactForm() {
       alert('Phone number must be exactly 10 digits.');
       return;
     }
+
+    // Save to admin submissions
+    const subs = getData('chaitra_submissions', []);
+    subs.push({
+      id: generateId(),
+      formType: 'Contact',
+      name,
+      email,
+      phone,
+      message,
+      read: false,
+      createdAt: new Date().toISOString(),
+    });
+    setData('chaitra_submissions', subs);
+
     alert('Thank you for your message! We will get back to you soon.');
     this.reset();
   });
 }
 initContactForm();
+
+// ============================================
+// CAREER APPLY FORM - OPPORTUNITIES PAGE
+// ============================================
+function initApplyForm() {
+  const form = document.getElementById('applyFormEl');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name = this.querySelector('[name="name"]').value.trim();
+    const email = this.querySelector('[name="email"]').value.trim();
+    const phone = this.querySelector('[name="phone"]').value.trim();
+    const jobTitle = document.getElementById('jobTitleInput')?.value || '';
+    const service = document.getElementById('serviceSelect')?.value || '';
+
+    if (!name || !email || !phone) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    const subs = getData('chaitra_submissions', []);
+    subs.push({
+      id: generateId(),
+      formType: 'Career',
+      name,
+      email,
+      phone,
+      position: jobTitle,
+      service,
+      read: false,
+      createdAt: new Date().toISOString(),
+    });
+    setData('chaitra_submissions', subs);
+
+    alert('Application submitted successfully! We will contact you soon.');
+    closeApplyForm();
+    this.reset();
+  });
+}
+initApplyForm();
+
+// ============================================
+// DYNAMIC TESTIMONIALS ON INDEX PAGE
+// ============================================
+function renderTestimonials() {
+  const grid = document.querySelector('.testimonials-grid');
+  if (!grid) return;
+
+  const testimonials = getData('chaitra_testimonials', []);
+  if (testimonials.length === 0) return;
+
+  const active = testimonials.filter(t => t.active).sort((a,b) => a.sortOrder - b.sortOrder);
+  if (active.length === 0) return;
+
+  // Clear hardcoded testimonials and render from admin data
+  grid.innerHTML = active.map((t, i) => `
+    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="${(i + 1) * 100}">
+      <div class="testimonial-quote">"${t.content}"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">${t.name.charAt(0).toUpperCase()}</div>
+        <div class="author-info">
+          <h4>${t.name}</h4>
+          <p>${t.role}${t.company ? `, ${t.company}` : ''}</p>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  // Re-init AOS for new elements
+  if (typeof AOS !== 'undefined') { AOS.refresh(); }
+}
+renderTestimonials();
+
+// ============================================
+// DYNAMIC JOBS ON OPPORTUNITIES PAGE
+// ============================================
+function renderAdminJobs() {
+  const jobListings = document.getElementById('jobListings');
+  if (!jobListings) return;
+
+  const jobs = getData('chaitra_jobs', []);
+  if (jobs.length === 0) return;
+
+  const active = jobs.filter(j => j.active).sort((a,b) => a.sortOrder - b.sortOrder);
+  if (active.length === 0) return;
+
+  const html = active.map(j => `
+    <div class="job-row" data-title="${(j.title + ' ' + j.category).toLowerCase()}" data-location="${j.location.toLowerCase()}" data-exp="0">
+      <div class="job-row-top">
+        <span>Posted: ${new Date(j.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+        <span class="job-number"><span class="badge badge-green" style="background:#f0fdf4;color:#16a34a;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:600;">${j.type}</span></span>
+      </div>
+      <div class="job-row-body">
+        <div class="job-col title">
+          <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="">
+          <div>
+            <h3>${j.title}</h3>
+            <p><i class="fas fa-map-marker-alt"></i> ${j.location}${j.badge ? ` <span style="background:#dbeafe;color:#2563eb;padding:1px 8px;border-radius:10px;font-size:11px;margin-left:6px;">${j.badge}</span>` : ''}</p>
+          </div>
+        </div>
+        <div class="job-col"><span>CATEGORY</span><strong>${j.category}</strong></div>
+        <div class="job-col"><span>TOOLS</span><strong>${j.tools && j.tools.length ? j.tools.slice(0,2).join(', ') : '--'}</strong></div>
+        <div class="job-col action">
+          <button onclick="openJobApplyForm('${j.title.replace(/'/g, "\\'")}')">APPLY</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  jobListings.insertAdjacentHTML('afterbegin', html);
+}
+renderAdminJobs();
 
 // ============================================
 // OPPORTUNITIES PAGE

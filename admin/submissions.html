@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submissions - Chaitra Soft Admin</title>
+  <link rel="icon" type="image/jpeg" href="../assets/logo.jpeg" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+  <link href="admin-style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <img src="../assets/logo.jpeg" alt="Logo" />
+        <div>
+          <span>Chaitra Soft</span>
+          <small>Admin Panel</small>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html"><i class="fas fa-chart-pie"></i> Dashboard</a>
+        <a href="jobs.html"><i class="fas fa-briefcase"></i> Job Openings</a>
+        <a href="submissions.html"><i class="fas fa-file-lines"></i> Submissions</a>
+        <a href="clients.html"><i class="fas fa-building"></i> Client Logos</a>
+        <a href="reviews.html"><i class="fas fa-star"></i> Testimonials</a>
+        <a href="settings.html"><i class="fas fa-gear"></i> Settings</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="#" id="logoutBtn"><i class="fas fa-right-from-bracket"></i> Sign Out</a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay"></div>
+
+    <div class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="hamburger"><i class="fas fa-bars"></i></button>
+          <h1 class="topbar-title">Submissions</h1>
+        </div>
+        <div class="topbar-right">
+          <div class="topbar-user">
+            <span>Admin</span>
+            <div class="topbar-avatar">A</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <div class="page-header">
+          <div>
+            <h2>Submissions</h2>
+            <p id="submissionsCount">Manage form submissions</p>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="btn btn-secondary" onclick="exportCSV()"><i class="fas fa-download"></i> Export CSV</button>
+          </div>
+        </div>
+
+        <div class="filter-bar">
+          <select id="filterType">
+            <option value="">All Types</option>
+            <option value="Contact">Contact</option>
+            <option value="Career">Career</option>
+          </select>
+          <select id="filterStatus">
+            <option value="">All Status</option>
+            <option value="unread">Unread</option>
+            <option value="read">Read</option>
+          </select>
+        </div>
+
+        <div class="card">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th style="text-align:right;">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="submissionsTableBody"></tbody>
+            </table>
+          </div>
+          <div id="submissionsEmpty" class="empty-state" style="display:none;">
+            <i class="fas fa-inbox"></i>
+            <h3>No submissions yet</h3>
+            <p>Submissions from your website forms will appear here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <script src="admin-script.js"></script>
+  <script>
+    function renderSubmissions() {
+      let subs = getData('chaitra_submissions', []);
+      const filterType = document.getElementById('filterType').value;
+      const filterStatus = document.getElementById('filterStatus').value;
+
+      if (filterType) subs = subs.filter(s => s.formType === filterType);
+      if (filterStatus) subs = subs.filter(s => filterStatus === 'unread' ? !s.read : s.read);
+
+      const unread = subs.filter(s => !s.read).length;
+      document.getElementById('submissionsCount').textContent = `${subs.length} submission${subs.length !== 1 ? 's' : ''}${unread ? ` (${unread} unread)` : ''}`;
+
+      const tbody = document.getElementById('submissionsTableBody');
+      const empty = document.getElementById('submissionsEmpty');
+      if (subs.length === 0) {
+        tbody.innerHTML = '';
+        empty.style.display = 'block';
+        return;
+      }
+      empty.style.display = 'none';
+      tbody.innerHTML = subs.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt)).map(s => `
+        <tr>
+          <td><span class="badge ${s.formType === 'Contact' ? 'badge-blue' : 'badge-purple'}">${s.formType}</span></td>
+          <td style="font-weight:500;">${s.name}</td>
+          <td>${s.email}</td>
+          <td style="font-size:12px;color:var(--text-muted);">${timeAgo(s.createdAt)}</td>
+          <td>
+            <span class="badge ${s.read ? 'badge-slate' : 'badge-green'}">${s.read ? 'Read' : 'New'}</span>
+          </td>
+          <td style="text-align:right;">
+            <button class="btn-icon view" onclick="viewSubmission('${s.id}')" title="View"><i class="fas fa-eye"></i></button>
+            <button class="btn-icon edit" onclick="toggleRead('${s.id}')" title="Toggle read status"><i class="fas ${s.read ? 'fa-envelope' : 'fa-envelope-open'}"></i></button>
+            <button class="btn-icon delete" onclick="deleteSubmission('${s.id}')" title="Delete"><i class="fas fa-trash"></i></button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function viewSubmission(id) {
+      const subs = getData('chaitra_submissions', []);
+      const s = subs.find(x => x.id === id);
+      if (!s) return;
+      // Mark as read
+      if (!s.read) {
+        s.read = true;
+        setData('chaitra_submissions', subs);
+        renderSubmissions();
+      }
+      let details = `<div style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);z-index:9998;display:flex;align-items:center;justify-content:center;padding:20px;" onclick="this.remove()">
+        <div style="background:#fff;border-radius:12px;padding:24px;max-width:500px;width:100%;max-height:80vh;overflow-y:auto;" onclick="event.stopPropagation()">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+            <h3 style="font-size:17px;">${s.formType} Submission</h3>
+            <button style="background:none;border:none;font-size:20px;cursor:pointer;" onclick="this.closest('[style]').parentElement.remove()">&times;</button>
+          </div>
+          <table style="width:100%;border-collapse:collapse;">`;
+      for (const [key, val] of Object.entries(s)) {
+        if (['id','read','createdAt'].includes(key)) continue;
+        details += `<tr><td style="padding:8px 12px;font-weight:600;font-size:13px;border-bottom:1px solid #f1f5f9;text-transform:capitalize;">${key.replace(/([A-Z])/g,' $1')}</td><td style="padding:8px 12px;font-size:13px;border-bottom:1px solid #f1f5f9;">${val}</td></tr>`;
+      }
+      details += `</table>
+          <div style="margin-top:16px;text-align:right;">
+            <button class="btn btn-secondary btn-sm" onclick="this.closest('[style]').parentElement.remove()">Close</button>
+          </div>
+        </div>
+      </div>`;
+      document.body.insertAdjacentHTML('beforeend', details);
+    }
+
+    function toggleRead(id) {
+      const subs = getData('chaitra_submissions', []);
+      const s = subs.find(x => x.id === id);
+      if (s) {
+        s.read = !s.read;
+        setData('chaitra_submissions', subs);
+        renderSubmissions();
+        toast(`Marked as ${s.read ? 'read' : 'unread'}.`, 'info');
+      }
+    }
+
+    async function deleteSubmission(id) {
+      const confirmed = await confirmAction('Delete this submission?');
+      if (!confirmed) return;
+      let subs = getData('chaitra_submissions', []);
+      subs = subs.filter(s => s.id !== id);
+      setData('chaitra_submissions', subs);
+      renderSubmissions();
+      toast('Submission deleted.', 'info');
+    }
+
+    function exportCSV() {
+      const subs = getData('chaitra_submissions', []);
+      if (subs.length === 0) { toast('No data to export.', 'error'); return; }
+      const headers = ['Type','Name','Email','Phone','Message','Date','Status'];
+      const rows = subs.map(s => [
+        s.formType, s.name, s.email, s.phone || '', s.message || s.position || '', formatDate(s.createdAt), s.read ? 'Read' : 'New'
+      ]);
+      const csv = [headers.join(','), ...rows.map(r => r.map(v => `"${v}"`).join(','))].join('\n');
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'submissions.csv'; a.click();
+      URL.revokeObjectURL(url);
+      toast('Exported successfully!', 'success');
+    }
+
+    document.getElementById('filterType').addEventListener('change', renderSubmissions);
+    document.getElementById('filterStatus').addEventListener('change', renderSubmissions);
+    document.addEventListener('DOMContentLoaded', renderSubmissions);
+  </script>
+</body>
+</html>

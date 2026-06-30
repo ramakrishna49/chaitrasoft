@@ -111,7 +111,7 @@
 
   <script src="admin-script.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    function refreshDashboard() {
       const jobs = getData('chaitra_jobs', []);
       const submissions = getData('chaitra_submissions', []);
       const clients = getData('chaitra_clients', []);
@@ -122,16 +122,16 @@
       const activeClients = clients.filter(c => c.active);
       const activeTestimonials = testimonials.filter(t => t.active);
 
-      animateCounter(document.getElementById('statJobs'), activeJobs.length);
+      document.getElementById('statJobs').textContent = activeJobs.length;
       document.getElementById('statJobsDesc').textContent = `${activeJobs.length} active / ${jobs.length} total`;
 
-      animateCounter(document.getElementById('statSubmissions'), submissions.length);
+      document.getElementById('statSubmissions').textContent = submissions.length;
       document.getElementById('statSubmissionsDesc').textContent = `${unread.length} unread / ${submissions.length} total`;
 
-      animateCounter(document.getElementById('statClients'), activeClients.length);
+      document.getElementById('statClients').textContent = activeClients.length;
       document.getElementById('statClientsDesc').textContent = `${activeClients.length} active`;
 
-      animateCounter(document.getElementById('statTestimonials'), activeTestimonials.length);
+      document.getElementById('statTestimonials').textContent = activeTestimonials.length;
       document.getElementById('statTestimonialsDesc').textContent = `${activeTestimonials.length} published`;
 
       // Recent submissions
@@ -167,6 +167,11 @@
           </div>
         `).join('');
       }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      refreshDashboard();
+      setInterval(refreshDashboard, 5000);
     });
   </script>
 </body>

@@ -380,7 +380,7 @@ section {
 
 .cta-primary {
   background: var(--bg-gradient);
-  color: white;
+  color: #fff;
   box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
 }
 
@@ -1026,10 +1026,37 @@ section {
 
 /* CTA SECTION */
 .cta-section {
-  padding: 80px 20px;
+  padding: 100px 20px;
   background: var(--bg-gradient);
   color: white;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cta-section h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+.cta-section p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-buttons {
@@ -1630,6 +1657,16 @@ textarea {
 .main-service-item {
   border-radius: 10px;
 }
+
+/* Button hover effects */
+.cta-primary:hover { background: linear-gradient(135deg, #2c5aa0, #1a3d6e); color: #fff; }
+.cta-secondary:hover { background: var(--bg-gradient); color: #fff; border-color: transparent; }
+.cta-btn-white:hover { background: #e8f0fe; color: var(--primary); }
+.cta-btn-outline:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.submit-btn:hover { background: var(--bg-gradient-2); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(44,90,160,0.3); }
+.apply-btn:hover { background: var(--bg-gradient-2); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(44,90,160,0.3); }
+.cta-btn-primary:hover { background: linear-gradient(135deg, #2c5aa0, #1a3d6e); color: #fff; }
+.cta-btn-secondary:hover { background: var(--bg-gradient); color: #fff; border-color: transparent; }
 
 /* Service card images - uniform size */
 .service-image {

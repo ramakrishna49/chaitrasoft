@@ -89,12 +89,6 @@
         </ul>
       </div>
     </nav>
-
-<!-- BACKGROUND ‘‘CHAITRA SOFT’’ WATERMARK -->
-
-
-
-
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-overlay">
@@ -105,72 +99,64 @@
   </div>
 </section>
 
-
-</section>
 <section class="job-search-section">
-  <h2 class="job-search-title">Find Your Job You Deserve It</h2>
-
-  <form class="job-search-form" onsubmit="filterJobs(event)">
-    <div class="search-field">
-      <i class="fas fa-search"></i>
-      <input type="text" id="keywordInput" placeholder="Job title or keyword">
-    </div>
-
-    <div class="search-field">
-      <i class="fas fa-map-marker-alt"></i>
-      <input type="text" id="locationInput" placeholder="Location">
-    </div>
-
-    <div class="search-field">
-      <i class="fas fa-briefcase"></i>
-      <input type="number" id="experienceInput" placeholder="Experience (0 = Fresher)">
-    </div>
-
-    <button type="submit" class="search-btn">SEARCH JOBS</button>
-  </form>
+  <div class="container">
+    <h2 class="job-search-title">Find Your Dream Job</h2>
+    <form class="job-search-form" onsubmit="filterJobs(event)">
+      <div class="search-field">
+        <i class="fas fa-search"></i>
+        <input type="text" id="keywordInput" placeholder="Job title or keyword">
+      </div>
+      <div class="search-field">
+        <i class="fas fa-map-marker-alt"></i>
+        <input type="text" id="locationInput" placeholder="Location">
+      </div>
+      <div class="search-field">
+        <i class="fas fa-briefcase"></i>
+        <input type="number" id="experienceInput" placeholder="Experience (0 = Fresher)">
+      </div>
+      <button type="submit" class="search-btn">SEARCH JOBS</button>
+    </form>
+  </div>
 </section>
 
-<!-- ===== JOB CARDS ===== -->
+<!-- ===== SERVICE CATEGORIES ===== -->
 <section class="jobs">
-  <h2>Available Services</h2>
-  <div class="jobs-grid">
-
-    <div class="job-card" data-title="staffing services">
-      <i class="fas fa-briefcase"></i>
-      <h4>Staffing Services</h4>
-      <p>Permanent, contract, temporary & international staffing opportunities.</p>
-      <button onclick="openApplyForm('Staffing Services')">Apply Now</button>
-    </div>
-
-  
-    <div class="job-card" data-title="hr services">
-      <i class="fas fa-users-cog"></i>
-      <h4>HR Services</h4>
-      <p>Payroll, HR consulting, compliance & policy roles.</p>
-      <button onclick="openApplyForm('HR Services')">Apply Now</button>
-    </div>
-
-    <div class="job-card" data-title="software it services">
-      <i class="fas fa-laptop-code"></i>
-      <h4>Software / IT Services</h4>
-      <p>Web & app development, UI/UX, graphic design opportunities.</p>
-      <button onclick="openApplyForm('Software / IT Services')">Apply Now</button>
-    </div>
-
+  <div class="container">
+    <h2>Service Categories</h2>
+    <p style="text-align:center;color:var(--text-light);margin-bottom:30px;">Explore opportunities across our service domains</p>
+    <div class="jobs-grid">
+      <div class="job-card" data-title="staffing services">
+        <i class="fas fa-briefcase"></i>
+        <h4>Staffing Services</h4>
+        <p>Permanent, contract, temporary & international staffing opportunities.</p>
+        <button onclick="openApplyForm('Staffing Services')">Apply Now</button>
+      </div>
+      <div class="job-card" data-title="hr services">
+        <i class="fas fa-users-cog"></i>
+        <h4>HR Services</h4>
+        <p>Payroll, HR consulting, compliance & policy roles.</p>
+        <button onclick="openApplyForm('HR Services')">Apply Now</button>
+      </div>
+      <div class="job-card" data-title="software it services">
+        <i class="fas fa-laptop-code"></i>
+        <h4>Software / IT Services</h4>
+        <p>Web & app development, UI/UX, graphic design opportunities.</p>
+        <button onclick="openApplyForm('Software / IT Services')">Apply Now</button>
+      </div>
       <div class="job-card" data-title="digital marketing">
-      <i class="fas fa-chart-line"></i>
-      <h4>Digital Marketing</h4>
-      <p>SEO, PPC, SMM, email marketing roles.</p>
-      <button onclick="openApplyForm('Digital Marketing Services')">Apply Now</button>
+        <i class="fas fa-chart-line"></i>
+        <h4>Digital Marketing</h4>
+        <p>SEO, PPC, SMM, email marketing roles.</p>
+        <button onclick="openApplyForm('Digital Marketing Services')">Apply Now</button>
+      </div>
+      <div class="job-card" data-title="mobile app development">
+        <i class="fas fa-mobile-alt"></i>
+        <h4>Mobile App Development</h4>
+        <p>Android, iOS, Hybrid app development opportunities.</p>
+        <button onclick="openApplyForm('Mobile App Development')">Apply Now</button>
+      </div>
     </div>
-
-       <div class="job-card" data-title="mobile app development">
-      <i class="fas fa-mobile-alt"></i>
-      <h4>Mobile App Development</h4>
-      <p>Android, iOS, Hybrid app development opportunities.</p>
-      <button onclick="openApplyForm('Mobile App Development')">Apply Now</button>
-    </div>
-
   </div>
 </section>
 
@@ -193,10 +179,9 @@
         <input type="tel" name="phone" required>
       </div>
       <div>
-  <label>Job Title</label>
-  <input type="text" id="jobTitleInput" name="jobTitle" readonly>
-</div>
-
+        <label>Job Title</label>
+        <input type="text" id="jobTitleInput" name="jobTitle" readonly>
+      </div>
       <div>
         <label>Select Sub-Service</label>
         <select id="serviceSelect" name="service"></select>
@@ -212,6 +197,8 @@
   </div>
 </div>
 <section class="job-listings" id="jobListings">
+  <div class="container">
+    <h2 class="job-listings-title">Open Positions</h2>
 
   <!-- JOB -->
   <div class="job-row" data-title="software developer" data-location="bangalore" data-exp="0">
@@ -302,19 +289,13 @@
       <button onclick="openJobApplyForm('Digital Marketing Executive')">APPLY</button>
       </div>
     </div>
+    </div>
   </div>
-
 </section>
 <div id="noJobs" class="no-jobs-message">
   <h2>No jobs found 😕</h2>
   <p>Try changing keywords, location, or experience.</p>
 </div>
-
-
-
-
-
-
 
     <footer class="footer">
       <div class="footer-top">

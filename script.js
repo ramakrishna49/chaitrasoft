@@ -307,7 +307,15 @@ function renderAdminJobs() {
     </div>
   `).join('');
 
-  jobListings.insertAdjacentHTML('afterbegin', html);
+  const container = jobListings.querySelector('.container');
+  const heading = container ? container.querySelector('.job-listings-title') : null;
+  if (heading) {
+    heading.insertAdjacentHTML('afterend', html);
+  } else if (container) {
+    container.insertAdjacentHTML('afterbegin', html);
+  } else {
+    jobListings.insertAdjacentHTML('afterbegin', html);
+  }
 }
 renderAdminJobs();
 

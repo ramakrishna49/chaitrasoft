@@ -213,7 +213,7 @@ body { padding-top: 90px; }
 .page-staffing .cta-btn {
   padding: 15px 30px;
   border: none;
-  border-radius: 25px;
+  border-radius: 5px;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -497,7 +497,7 @@ body { padding-top: 90px; }
   background: var(--bg-gradient);
   color: white;
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -511,7 +511,7 @@ body { padding-top: 90px; }
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -653,7 +653,7 @@ body { padding-top: 90px; }
 .page-hr-services .cta-btn {
   padding: 15px 30px;
   border: none;
-  border-radius: 25px;
+  border-radius: 5px;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -794,7 +794,7 @@ body { padding-top: 90px; }
   background: var(--bg-gradient);
   color: white;
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -808,7 +808,7 @@ body { padding-top: 90px; }
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -939,7 +939,7 @@ body { padding-top: 90px; }
 .page-software .cta-btn {
   padding: 15px 30px;
   border: none;
-  border-radius: 25px;
+  border-radius: 5px;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -1339,7 +1339,7 @@ body { padding-top: 90px; }
   background: var(--bg-gradient);
   color: white;
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -1353,7 +1353,7 @@ body { padding-top: 90px; }
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -1537,7 +1537,7 @@ body { padding-top: 90px; }
 .page-digital-marketing .cta-btn {
   padding: 15px 30px;
   border: none;
-  border-radius: 25px;
+  border-radius: 5px;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -1638,7 +1638,7 @@ body { padding-top: 90px; }
   background: var(--bg-gradient);
   color: white;
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -1652,7 +1652,7 @@ body { padding-top: 90px; }
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -1786,7 +1786,7 @@ body { padding-top: 90px; }
 .page-mobile-apps .cta-btn {
   padding: 15px 30px;
   border: none;
-  border-radius: 25px;
+  border-radius: 5px;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -2067,7 +2067,7 @@ body { padding-top: 90px; }
   background: var(--bg-gradient);
   color: white;
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -2081,7 +2081,7 @@ body { padding-top: 90px; }
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -2199,7 +2199,7 @@ body { padding-top: 90px; }
 .page-website-dev .cta-btn {
   padding: 15px 30px;
   border: none;
-  border-radius: 25px;
+  border-radius: 5px;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -2576,7 +2576,7 @@ body { padding-top: 90px; }
   background: var(--bg-gradient);
   color: white;
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -2590,7 +2590,7 @@ body { padding-top: 90px; }
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 15px 30px;
-  border-radius: 25px;
+  border-radius: 5px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -3334,3 +3334,324 @@ body { padding-top: 90px; }
   .page-terms .hero h1 { font-size: 1.8rem; }
   .page-terms .terms-container { padding: 20px; }
 }
+
+
+/* ============================================
+   GLOBAL DESIGN ENHANCEMENTS
+   Applied across all pages for consistency
+   ============================================ */
+
+/* Better card hover - gradient top border accent for cards that already have ::before */
+.page-home .service-card,
+.page-home .industries-grid .industry-card,
+.page-why-choose-us .reason-card,
+.page-why-choose-us .value-card,
+.page-staffing .industry-card,
+.page-staffing .service-card,
+.page-software .service-card,
+.page-website-dev .service-card,
+.page-hr-services .service-card,
+.page-digital-marketing .service-card,
+.page-mobile-apps .service-card {
+  border: 1px solid #f0f0f0;
+}
+
+/* Add gradient top border hover to cards missing it */
+.page-staffing .service-card::before,
+.page-software .service-card::before,
+.page-website-dev .service-card::before,
+.page-hr-services .service-card::before,
+.page-digital-marketing .service-card::before,
+.page-mobile-apps .service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--bg-gradient);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.page-staffing .service-card:hover::before,
+.page-software .service-card:hover::before,
+.page-website-dev .service-card:hover::before,
+.page-hr-services .service-card:hover::before,
+.page-digital-marketing .service-card:hover::before,
+.page-mobile-apps .service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Better card hover for tech categories */
+.page-staffing .tech-category {
+  border: 1px solid #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-staffing .tech-category::before,
+.page-software .tech-category::before,
+.page-website-dev .tech-category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--bg-gradient);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.page-staffing .tech-category:hover::before,
+.page-software .tech-category:hover::before,
+.page-website-dev .tech-category:hover::before {
+  transform: scaleX(1);
+}
+
+/* Better process step cards - add top border hover */
+.page-staffing .process-step,
+.page-website-dev .process-step {
+  border: 1px solid #f0f0f0;
+}
+
+.page-staffing .process-step::before,
+.page-website-dev .process-step::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--bg-gradient);
+  transform: scaleX(0);
+  transition: var(--transition);
+}
+
+.page-staffing .process-step:nth-child(2)::before,
+.page-website-dev .process-step:nth-child(2)::before {
+  background: var(--bg-gradient-2);
+}
+
+.page-staffing .process-step:nth-child(3)::before,
+.page-website-dev .process-step:nth-child(3)::before {
+  background: var(--bg-gradient-3);
+}
+
+.page-staffing .process-step:nth-child(4)::before,
+.page-website-dev .process-step:nth-child(4)::before {
+  background: var(--bg-gradient-4);
+}
+
+.page-staffing .process-step:hover::before,
+.page-website-dev .process-step:hover::before {
+  transform: scaleX(1);
+}
+
+/* Connect process steps with subtle line */
+.page-staffing .process-steps {
+  position: relative;
+}
+
+.page-staffing .process-steps::before {
+  content: "";
+  position: absolute;
+  top: 80px;
+  left: calc(12.5% + 30px);
+  right: calc(12.5% + 30px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--primary), var(--accent));
+  opacity: 0.3;
+  z-index: 0;
+}
+
+@media (max-width: 1024px) {
+  .page-staffing .process-steps::before { display: none; }
+}
+
+/* Better testimonial cards - add quote icon */
+.page-home .testimonial-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-home .testimonial-card::before {
+  content: "\201C";
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  font-size: 80px;
+  color: rgba(74, 123, 200, 0.06);
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.page-why-choose-us .testimonial-card {
+  position: relative;
+}
+
+.page-why-choose-us .testimonial-card::before {
+  content: "\201C";
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 50px;
+  color: rgba(74, 123, 200, 0.08);
+  font-family: Georgia, serif;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* Better stat items - subtle animation on hover */
+.page-staffing .stat-item,
+.page-software .stat-item,
+.page-website-dev .stat-item,
+.page-digital-marketing .stat-item,
+.page-mobile-apps .stat-item,
+.page-why-choose-us .stat-item,
+.page-home .achievement-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.page-staffing .stat-item:hover,
+.page-software .stat-item:hover,
+.page-website-dev .stat-item:hover,
+.page-digital-marketing .stat-item:hover,
+.page-mobile-apps .stat-item:hover,
+.page-why-choose-us .stat-item:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+/* Better stat number gradient (for bg-gradient themed stat sections) */
+.page-staffing .stats-section .stat-number,
+.page-software .stats-section .stat-number,
+.page-website-dev .stats-section .stat-number,
+.page-digital-marketing .stats-section .stat-number,
+.page-mobile-apps .stats-section .stat-number,
+.page-why-choose-us .stats-section .stat-number {
+  background: linear-gradient(135deg, #fff, rgba(255,255,255,0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Better CTA sections - animated gradient background */
+.page-staffing .cta-section,
+.page-software .cta-section,
+.page-website-dev .cta-section,
+.page-hr-services .cta-section,
+.page-digital-marketing .cta-section,
+.page-mobile-apps .cta-section,
+.page-why-choose-us .cta-section,
+.page-home .cta-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-staffing .cta-section::before,
+.page-software .cta-section::before,
+.page-website-dev .cta-section::before,
+.page-hr-services .cta-section::before,
+.page-digital-marketing .cta-section::before,
+.page-mobile-apps .cta-section::before,
+.page-why-choose-us .cta-section::before,
+.page-home .cta-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 50%);
+  animation: ctaPulse 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes ctaPulse {
+  0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.5; }
+  33% { transform: scale(1.2) translate(5%, 5%); opacity: 0.8; }
+  66% { transform: scale(0.9) translate(-5%, -5%); opacity: 0.6; }
+}
+
+/* Better portfolio card hover */
+.page-software .portfolio-card:hover .portfolio-image,
+.page-website-dev .portfolio-card:hover .portfolio-image {
+  transform: scale(1.05);
+}
+
+.page-software .portfolio-image,
+.page-website-dev .portfolio-image {
+  transition: transform 0.5s ease;
+}
+
+/* Better tech item hover */
+.page-software .tech-item:hover,
+.page-website-dev .tech-item:hover,
+.page-home .technologies-section .tech-item:hover {
+  background: var(--bg-gradient);
+  color: white;
+  transform: translateX(6px);
+  box-shadow: 0 4px 15px rgba(74, 123, 200, 0.3);
+}
+
+/* Better form inputs across all pages */
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(74, 123, 200, 0.1);
+}
+
+/* Better search inputs */
+.page-opportunities .search-field input:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+/* Job rows - add top border accent on hover */
+.page-opportunities .job-row {
+  border: 1px solid #f1f5f9;
+  border-top: 3px solid transparent;
+  transition: all 0.3s ease, border-top-color 0.3s ease;
+}
+
+.page-opportunities .job-row:hover {
+  border-top-color: #667eea;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+/* Location cards - better hover */
+.page-contact .location-card {
+  border: 1px solid #f1f5f9;
+}
+
+.page-contact .location-card:hover {
+  border-color: rgba(74, 123, 200, 0.2);
+}
+
+/* Smooth section reveal - AOS fallback */
+.section-header {
+  opacity: 0;
+  animation: sectionFadeIn 0.6s ease forwards;
+}
+
+@keyframes sectionFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Better focus visible for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Box shadow on all section headers for visual depth
+   Already handled by the ::after underline in style.css */

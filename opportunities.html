@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Opportunities | Chaitra Soft - Career Opportunities</title>
+    <meta
+      name="description"
+      content="Explore career opportunities at Chaitra Soft. Join our team and grow your career in HR, IT, Digital Marketing and more."
+    />
+
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpeg" />
+    <link rel="shortcut icon" type="image/jpeg" href="assets/logo.jpeg" />
+    <link rel="apple-touch-icon" href="assets/logo.jpeg" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+    
+    
+
+
+  <link href="style.css" rel="stylesheet" />
+  <link href="page-unique.css" rel="stylesheet" />
+</head>
+<body class="page-opportunities">
+
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="assets/logo.jpeg" alt="Logo">
+        </a>
+        <div class="mobile-menu" id="mobileMenu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item">
+            <a href="index.html">🏠 Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="About us.html">👨‍💼 About Us</a>
+          </li>
+          <li class="nav-item" id="servicesItem">
+            <a href="javascript:void(0)" id="servicesLink">⚙️ Services <i class="fas fa-chevron-down"></i></a>
+            <div class="services-main-dropdown" id="servicesDropdown">
+              <a href="staffing.html" class="main-service-item staffing">
+                <i class="fas fa-users"></i> Staffing
+              </a>
+              <a href="hr-services.html" class="main-service-item hr">
+                <i class="fas fa-user-tie"></i> HR Services
+              </a>
+              <a href="software.html" class="main-service-item software">
+                <i class="fas fa-laptop-code"></i> Software
+              </a>
+              <a href="digitalmarketing.html" class="main-service-item marketing">
+                <i class="fas fa-chart-line"></i> Digital Marketing
+              </a>
+              <a href="mobile-apps.html" class="main-service-item mobile">
+                <i class="fas fa-mobile-alt"></i> Mobile Apps
+              </a>
+              <a href="website-dev.html" class="main-service-item web">
+                <i class="fas fa-globe"></i> Web Development
+              </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="opportunities.html" class="active">💼 Opportunities</a>
+          </li>
+          <li class="nav-item">
+            <a href="why choose us.html">⭐ Why Choose Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="contactus.html">📞 Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+<!-- BACKGROUND ‘‘CHAITRA SOFT’’ WATERMARK -->
+
+
+
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-overlay">
+    <div>
+      <h1>Join Our Team</h1>
+      <p>Explore career opportunities across HR, IT, Digital Marketing & More</p>
+    </div>
+  </div>
+</section>
+
+
+</section>
+<section class="job-search-section">
+  <h2 class="job-search-title">Find Your Job You Deserve It</h2>
+
+  <form class="job-search-form" onsubmit="filterJobs(event)">
+    <div class="search-field">
+      <i class="fas fa-search"></i>
+      <input type="text" id="keywordInput" placeholder="Job title or keyword">
+    </div>
+
+    <div class="search-field">
+      <i class="fas fa-map-marker-alt"></i>
+      <input type="text" id="locationInput" placeholder="Location">
+    </div>
+
+    <div class="search-field">
+      <i class="fas fa-briefcase"></i>
+      <input type="number" id="experienceInput" placeholder="Experience (0 = Fresher)">
+    </div>
+
+    <button type="submit" class="search-btn">SEARCH JOBS</button>
+  </form>
+</section>
+
+<!-- ===== JOB CARDS ===== -->
+<section class="jobs">
+  <h2>Available Services</h2>
+  <div class="jobs-grid">
+
+    <div class="job-card" data-title="staffing services">
+      <i class="fas fa-briefcase"></i>
+      <h4>Staffing Services</h4>
+      <p>Permanent, contract, temporary & international staffing opportunities.</p>
+      <button onclick="openApplyForm('Staffing Services')">Apply Now</button>
+    </div>
+
+  
+    <div class="job-card" data-title="hr services">
+      <i class="fas fa-users-cog"></i>
+      <h4>HR Services</h4>
+      <p>Payroll, HR consulting, compliance & policy roles.</p>
+      <button onclick="openApplyForm('HR Services')">Apply Now</button>
+    </div>
+
+    <div class="job-card" data-title="software it services">
+      <i class="fas fa-laptop-code"></i>
+      <h4>Software / IT Services</h4>
+      <p>Web & app development, UI/UX, graphic design opportunities.</p>
+      <button onclick="openApplyForm('Software / IT Services')">Apply Now</button>
+    </div>
+
+      <div class="job-card" data-title="digital marketing">
+      <i class="fas fa-chart-line"></i>
+      <h4>Digital Marketing</h4>
+      <p>SEO, PPC, SMM, email marketing roles.</p>
+      <button onclick="openApplyForm('Digital Marketing Services')">Apply Now</button>
+    </div>
+
+       <div class="job-card" data-title="mobile app development">
+      <i class="fas fa-mobile-alt"></i>
+      <h4>Mobile App Development</h4>
+      <p>Android, iOS, Hybrid app development opportunities.</p>
+      <button onclick="openApplyForm('Mobile App Development')">Apply Now</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== APPLY FORM MODAL ===== -->
+<div id="applyFormContainer">
+  <div class="modal">
+    <button class="close" onclick="closeApplyForm()">&times;</button>
+    <h2>Job Application</h2>
+    <form action="#" method="post">
+      <div>
+        <label>Name</label>
+        <input type="text" name="name" required>
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" name="email" required>
+      </div>
+      <div>
+        <label>Phone</label>
+        <input type="tel" name="phone" required>
+      </div>
+      <div>
+  <label>Job Title</label>
+  <input type="text" id="jobTitleInput" name="jobTitle" readonly>
+</div>
+
+      <div>
+        <label>Select Sub-Service</label>
+        <select id="serviceSelect" name="service"></select>
+      </div>
+      <div>
+        <label>Resume (PDF)</label>
+        <input type="file" name="resume" accept=".pdf">
+      </div>
+      <div>
+        <button type="submit" class="submit-btn">Submit Application</button>
+      </div>
+    </form>
+  </div>
+</div>
+<section class="job-listings" id="jobListings">
+
+  <!-- JOB -->
+  <div class="job-row" data-title="software developer" data-location="bangalore" data-exp="0">
+    <div class="job-row-top">
+      <span>Start Date : 12 JUL, 2024</span>
+      <span class="job-number">End date : 28 Jul 2024 </span>
+    </div>
+    <div class="job-row-body">
+      <div class="job-col title">
+        <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+        <div>
+          <h3>Software Developer (Fresher)</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Bangalore</p>
+        </div>
+      </div>
+      <div class="job-col"><span>SALARY</span><strong>3.5 LPA</strong></div>
+      <div class="job-col"><span>EXPERIENCE</span><strong>0 Years</strong></div>
+      <div class="job-col action">
+  <button onclick="openJobApplyForm('Software Developer (Fresher)')">
+    APPLY
+  </button>
+</div>
+
+    </div>
+  </div>
+
+  <!-- JOB -->
+  <div class="job-row" data-title="java developer" data-location="hyderabad" data-exp="2">
+    <div class="job-row-top">
+      <span>Start date: 10 JUL, 2024</span>
+      <span class="job-number">End date : 28 Jul 2024</span>
+    </div>
+    <div class="job-row-body">
+      <div class="job-col title">
+        <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+        <div>
+          <h3>Java Developer</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Hyderabad</p>
+        </div>
+      </div>
+      <div class="job-col"><span>SALARY</span><strong>6 LPA</strong></div>
+      <div class="job-col"><span>EXPERIENCE</span><strong>2 Years</strong></div>
+       <div class="job-col action">
+    <button onclick="openJobApplyForm('Java Developer')">APPLY</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JOB -->
+  <div class="job-row" data-title="hr executive" data-location="chennai" data-exp="1">
+    <div class="job-row-top">
+      <span>Start date : 08 JUL, 2024</span>
+      <span class="job-number">End date : 28 Jul 2024</span>
+    </div>
+    <div class="job-row-body">
+      <div class="job-col title">
+        <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+        <div>
+          <h3>HR Executive</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Chennai</p>
+        </div>
+      </div>
+      <div class="job-col"><span>SALARY</span><strong>4 LPA</strong></div>
+      <div class="job-col"><span>EXPERIENCE</span><strong>1 Year</strong></div>
+      <div class="job-col action">
+      <button onclick="openJobApplyForm('HR Executive')">APPLY</button>
+       </div>
+    </div>
+  </div>
+
+  <!-- JOB -->
+  <div class="job-row" data-title="digital marketing executive" data-location="pune" data-exp="0">
+    <div class="job-row-top">
+      <span>Start date : 05 JUL, 2024</span>
+      <span class="job-number">End date : 28 Jul 2024</span>
+    </div>
+    <div class="job-row-body">
+      <div class="job-col title">
+        <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png">
+        <div>
+          <h3>Digital Marketing Executive (Fresher)</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Pune</p>
+        </div>
+      </div>
+      <div class="job-col"><span>SALARY</span><strong>3 LPA</strong></div>
+      <div class="job-col"><span>EXPERIENCE</span><strong>0 Years</strong></div>
+      <div class="job-col action">
+      <button onclick="openJobApplyForm('Digital Marketing Executive')">APPLY</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+<div id="noJobs" class="no-jobs-message">
+  <h2>No jobs found 😕</h2>
+  <p>Try changing keywords, location, or experience.</p>
+</div>
+
+
+
+
+
+
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-container footer-grid">
+          <!-- COMPANY -->
+          <div>
+            <div class="footer-brand">
+              <img
+                src="assets/logo.jpeg"
+                alt="Chaitra Soft Logo"
+                class="footer-logo-img"
+              />
+              <h3 class="footer-logo">Chaitra Soft</h3>
+            </div>
+            <p class="footer-text">
+              Chaitra Soft is a HR and IT solutions company <br>
+              helping organisations find the right talent and <br> adopt modern
+              technologies.
+            </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- QUICK LINKS -->
+          <div class="quick-links">
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="About us.html">About Us</a></li>
+              <li><a href="opportunities.html">Opportunities</a></li>
+              <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- INFORMATION -->
+          <div>
+            <h4 class="footer-title">Information</h4>
+            <ul class="footer-contact">
+              <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+              <li><i class="fas fa-envelope"></i> info@chaitrasoft.com</li>
+              <li><i class="fas fa-globe"></i> www.chaitrasoft.com</li>
+            </ul>
+          </div>
+
+          <!-- ADDRESS -->
+          <div>
+            <h4 class="footer-title">Address</h4>
+            <p class="footer-text">
+              <strong>Project Location</strong><br />
+              Manjeera Trinity Corporate<br />
+              Business Centre, Phase-9<br />
+              KPHB, Hyderabad – 500072
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-links">
+          <a href="privacyandpolicy.html">Privacy Policy</a>
+          <a href="termsandcondition.html">Terms & Conditions</a>
+          <a href="#">Site Map</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

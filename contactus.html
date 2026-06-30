@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Contact Us | Chaitra Soft</title>
+
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpeg" />
+    <link rel="shortcut icon" type="image/jpeg" href="assets/logo.jpeg" />
+    <link rel="apple-touch-icon" href="assets/logo.jpeg" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+
+    
+    <link href="style.css" rel="stylesheet" />
+  <link href="page-unique.css" rel="stylesheet" />
+</head>
+
+  <body class="page-contact">
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="assets/logo.jpeg" alt="Logo">
+        </a>
+        <div class="mobile-menu" id="mobileMenu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item">
+            <a href="index.html">🏠 Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="About us.html">👨‍💼 About Us</a>
+          </li>
+          <li class="nav-item" id="servicesItem">
+            <a href="javascript:void(0)" id="servicesLink">⚙️ Services <i class="fas fa-chevron-down"></i></a>
+            <div class="services-main-dropdown" id="servicesDropdown">
+              <a href="staffing.html" class="main-service-item staffing">
+                <i class="fas fa-users"></i> Staffing
+              </a>
+              <a href="hr-services.html" class="main-service-item hr">
+                <i class="fas fa-user-tie"></i> HR Services
+              </a>
+              <a href="software.html" class="main-service-item software">
+                <i class="fas fa-laptop-code"></i> Software
+              </a>
+              <a href="digitalmarketing.html" class="main-service-item marketing">
+                <i class="fas fa-chart-line"></i> Digital Marketing
+              </a>
+              <a href="mobile-apps.html" class="main-service-item mobile">
+                <i class="fas fa-mobile-alt"></i> Mobile Apps
+              </a>
+              <a href="website-dev.html" class="main-service-item web">
+                <i class="fas fa-globe"></i> Web Development
+              </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="opportunities.html">💼 Opportunities</a>
+          </li>
+          <li class="nav-item">
+            <a href="why choose us.html">⭐ Why Choose Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="contactus.html" class="active">📞 Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="hero-contact">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="contactus.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="hero-content">
+        <h1>Get In Touch</h1>
+        <p>Transform your business with our staffing & IT solutions</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <h2 class="section-title">Contact Info</h2>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3><i class="fas fa-headset"></i> Connect</h3>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>+91 98765 43210</div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>info@chaitrasoft.com</div>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>Mon-Fri: 9AM-7PM</div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <h3 style="font-size: 1.6rem; color: #333; margin-bottom: 25px">
+              Send Message
+            </h3>
+            <form id="contactForm">
+              <div class="form-group">
+                <input type="text" id="name" placeholder="Name *" required />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Email (must end with @gmail.com) *"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="Phone Number (10 digits) *"
+                  required
+                  maxlength="10"
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  placeholder="Message *"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="findus-section">
+      <div class="container">
+        <h2 class="section-title">Our Locations</h2>
+        <div class="findus-grid">
+          <div class="location-card">
+            <div class="location-header">
+              <div class="location-header-content">
+                <div class="location-icon"><i class="fas fa-building"></i></div>
+                <h3 class="location-title">Head Office</h3>
+                <p class="location-subtitle">👑 Main Hub</p>
+              </div>
+            </div>
+            <div class="location-content">
+              <div class="location-address">
+                123 Business St, Hitech City<br />Madhapur, Hyderabad 500081
+              </div>
+              <div class="location-map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.85!2d78.39103!3d17.44965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9486b3e3b7b9%3A0x9c0c5b5b5b5b5b5b!2sHitech%20City!5e0!3m2!1sen!2sin!4v1690000000000"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="location-details">
+                <div class="location-hours">9AM-7PM</div>
+                <a
+                  href="https://maps.google.com/?q=123+Business+Street+Hitech+City"
+                  target="_blank"
+                  class="directions-link"
+                >
+                  <i class="fas fa-directions"></i> Directions
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-card">
+            <div class="location-header">
+              <div class="location-header-content">
+                <div class="location-icon">
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <h3 class="location-title">Branch Office</h3>
+                <p class="location-subtitle">💼 Client Meetings</p>
+              </div>
+            </div>
+            <div class="location-content">
+              <div class="location-address">
+                456 Tech Park Rd, Gachibowli<br />Financial District, Hyderabad
+                500032
+              </div>
+              <div class="location-map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.12!2d78.37812!3d17.41589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9a0f8b9c3c3d%3A0x8f8c4c4c4c4c4c4c!2sGachibowli!5e0!3m2!1sen!2sin!4v1690000000000"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <div class="location-details">
+                <div class="location-hours">9:30AM-6:30PM</div>
+                <a
+                  href="https://maps.google.com/?q=456+Tech+Park+Road+Gachibowli"
+                  target="_blank"
+                  class="directions-link"
+                >
+                  <i class="fas fa-directions"></i> Directions
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-container footer-grid">
+          <!-- COMPANY -->
+          <div>
+            <div class="footer-brand">
+              <img
+                src="assets/logo.jpeg"
+                alt="Chaitra Soft Logo"
+                class="footer-logo-img"
+              />
+              <h3 class="footer-logo">Chaitra Soft</h3>
+            </div>
+            <p class="footer-text">
+              Chaitra Soft is a HR and IT solutions company <br>
+              helping organisations find the right talent and <br> adopt modern
+              technologies.
+            </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- QUICK LINKS -->
+          <div class="quick-links">
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="About us.html">About Us</a></li>
+              <li><a href="opportunities.html">Opportunities</a></li>
+              <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- INFORMATION -->
+          <div>
+            <h4 class="footer-title">Information</h4>
+            <ul class="footer-contact">
+              <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+              <li><i class="fas fa-envelope"></i> info@chaitrasoft.com</li>
+              <li><i class="fas fa-globe"></i> www.chaitrasoft.com</li>
+            </ul>
+          </div>
+
+          <!-- ADDRESS -->
+          <div>
+            <h4 class="footer-title">Address</h4>
+            <p class="footer-text">
+              <strong>Project Location</strong><br />
+              Manjeera Trinity Corporate<br />
+              Business Centre, Phase-9<br />
+              KPHB, Hyderabad – 500072
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-links">
+          <a href="privacyandpolicy.html">Privacy Policy</a>
+          <a href="termsandcondition.html">Terms & Conditions</a>
+          <a href="#">Site Map</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

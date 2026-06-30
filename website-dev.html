@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>
+      Website Development | Chaitra Soft - Professional Web Solutions
+    </title>
+    <meta
+      name="description"
+      content="Professional website development services by Chaitra Soft. Custom websites, e-commerce platforms, and modern web solutions for your business."
+    />
+
+    <link rel="icon" type="image/jpeg" href="assets/logo.jpeg" />
+    <link rel="shortcut icon" type="image/jpeg" href="assets/logo.jpeg" />
+    <link rel="apple-touch-icon" href="assets/logo.jpeg" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  <link href="page-unique.css" rel="stylesheet" />
+</head>
+
+  <body class="page-website-dev">
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="assets/logo.jpeg" alt="Logo">
+        </a>
+        <div class="mobile-menu" id="mobileMenu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </div>
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item">
+            <a href="index.html">🏠 Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="About us.html">👨‍💼 About Us</a>
+          </li>
+          <li class="nav-item" id="servicesItem">
+            <a href="javascript:void(0)" id="servicesLink" class="active">⚙️ Services <i class="fas fa-chevron-down"></i></a>
+            <div class="services-main-dropdown" id="servicesDropdown">
+              <a href="staffing.html" class="main-service-item staffing">
+                <i class="fas fa-users"></i> Staffing
+              </a>
+              <a href="hr-services.html" class="main-service-item hr">
+                <i class="fas fa-user-tie"></i> HR Services
+              </a>
+              <a href="software.html" class="main-service-item software">
+                <i class="fas fa-laptop-code"></i> Software
+              </a>
+              <a href="digitalmarketing.html" class="main-service-item marketing">
+                <i class="fas fa-chart-line"></i> Digital Marketing
+              </a>
+              <a href="mobile-apps.html" class="main-service-item mobile">
+                <i class="fas fa-mobile-alt"></i> Mobile Apps
+              </a>
+              <a href="website-dev.html" class="main-service-item web active">
+                <i class="fas fa-globe"></i> Web Development
+              </a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="opportunities.html">💼 Opportunities</a>
+          </li>
+          <li class="nav-item">
+            <a href="why choose us.html">⭐ Why Choose Us</a>
+          </li>
+          <li class="nav-item">
+            <a href="contactus.html">📞 Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="websitedevelopment.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="hero-content">
+        <h1 data-aos="fade-up">Professional Website Development</h1>
+        <p data-aos="fade-up" data-aos-delay="200">
+          Create stunning, responsive websites that drive results. From simple
+          business sites to complex e-commerce platforms, we build digital
+          experiences that engage and convert.
+        </p>
+
+        <div class="hero-cta">
+          <a
+            href="#services"
+            class="cta-btn cta-primary"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <i class="fas fa-globe"></i>
+            Our Services
+          </a>
+          <a
+            href="contact us.html"
+            class="cta-btn cta-secondary"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <i class="fas fa-phone"></i>
+            Get Quote
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Our Website Development Services</h2>
+          <p>
+            Comprehensive web solutions tailored to your business needs and
+            goals
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <img
+              src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Business Websites"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">
+                <i class="fas fa-laptop"></i>
+              </div>
+              <h3>Business Websites</h3>
+              <p>
+                Professional corporate websites that establish your online
+                presence and credibility.
+              </p>
+              <ul class="service-features">
+                <li>Responsive Design</li>
+                <li>SEO Optimization</li>
+                <li>Content Management System</li>
+                <li>Contact Forms & Integration</li>
+                <li>Social Media Integration</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <img
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="E-commerce Platforms"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">
+                <i class="fas fa-shopping-cart"></i>
+              </div>
+              <h3>E-commerce Platforms</h3>
+              <p>
+                Feature-rich online stores with secure payment processing and
+                inventory management.
+              </p>
+              <ul class="service-features">
+                <li>Product Catalog Management</li>
+                <li>Secure Payment Gateway</li>
+                <li>Order Management System</li>
+                <li>Customer Account Portal</li>
+                <li>Analytics & Reporting</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <img
+              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Custom Web Applications"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">
+                <i class="fas fa-paint-brush"></i>
+              </div>
+              <h3>Custom Web Applications</h3>
+              <p>
+                Tailored web applications built to solve your specific business
+                challenges.
+              </p>
+              <ul class="service-features">
+                <li>Custom Functionality</li>
+                <li>Database Integration</li>
+                <li>User Authentication</li>
+                <li>API Development</li>
+                <li>Third-party Integrations</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+            <img
+              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Responsive Design"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>Responsive Design</h3>
+              <p>
+                Mobile-first websites that look perfect on all devices and
+                screen sizes.
+              </p>
+              <ul class="service-features">
+                <li>Mobile-First Approach</li>
+                <li>Cross-Browser Compatibility</li>
+                <li>Touch-Friendly Interface</li>
+                <li>Fast Loading Speed</li>
+                <li>Optimized User Experience</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+            <img
+              src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="SEO & Performance"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">
+                <i class="fas fa-search"></i>
+              </div>
+              <h3>SEO & Performance</h3>
+              <p>
+                Websites optimized for search engines and lightning-fast
+                performance.
+              </p>
+              <ul class="service-features">
+                <li>On-Page SEO</li>
+                <li>Performance Optimization</li>
+                <li>Schema Markup</li>
+                <li>Google Analytics Setup</li>
+                <li>Speed Optimization</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+            <img
+              src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+              alt="Maintenance & Support"
+              class="service-image"
+            />
+            <div class="service-content">
+              <div class="service-icon">
+                <i class="fas fa-tools"></i>
+              </div>
+              <h3>Maintenance & Support</h3>
+              <p>
+                Ongoing website maintenance and technical support to keep your
+                site running smoothly.
+              </p>
+              <ul class="service-features">
+                <li>Regular Updates</li>
+                <li>Security Monitoring</li>
+                <li>Backup Management</li>
+                <li>Technical Support</li>
+                <li>Performance Monitoring</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Why Choose Our Web Development Services</h2>
+          <p>
+            We combine creativity, technology, and strategy to deliver
+            exceptional web experiences
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-content" data-aos="fade-right">
+            <h3>Modern & Scalable Solutions</h3>
+            <p>
+              We build websites using the latest technologies and best
+              practices, ensuring your site is future-ready and can grow with
+              your business. Our scalable architecture handles increased traffic
+              and functionality seamlessly.
+            </p>
+            <ul class="feature-list">
+              <li>Latest Web Technologies</li>
+              <li>Scalable Architecture</li>
+              <li>Future-Proof Design</li>
+              <li>Performance Optimized</li>
+              <li>Security Best Practices</li>
+            </ul>
+          </div>
+          <div class="feature-visual" data-aos="fade-left">
+            <div class="feature-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h4>Fast & Reliable</h4>
+            <p>Lightning-fast loading speeds and 99.9% uptime guarantee</p>
+          </div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-visual" data-aos="fade-right">
+            <div class="feature-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h4>User-Centered Design</h4>
+            <p>Intuitive interfaces designed with your users in mind</p>
+          </div>
+          <div class="feature-content" data-aos="fade-left">
+            <h3>User Experience Focused</h3>
+            <p>
+              Every website we create is designed with your users at the center.
+              We conduct thorough research to understand your audience and
+              create intuitive, engaging experiences that convert visitors into
+              customers.
+            </p>
+            <ul class="feature-list">
+              <li>User Research & Analysis</li>
+              <li>Intuitive Navigation</li>
+              <li>Conversion Optimization</li>
+              <li>Accessibility Compliance</li>
+              <li>A/B Testing Ready</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Our Development Process</h2>
+          <p>
+            A systematic approach that ensures quality, efficiency, and client
+            satisfaction
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+            <div class="step-number">1</div>
+            <h3>Discovery & Planning</h3>
+            <p>
+              We analyze your requirements, research your audience, and create a
+              comprehensive project plan with clear timelines and deliverables.
+            </p>
+          </div>
+
+          <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+            <div class="step-number">2</div>
+            <h3>Design & Prototyping</h3>
+            <p>
+              Our designers create wireframes and visual mockups, ensuring the
+              design aligns with your brand and user expectations.
+            </p>
+          </div>
+
+          <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+            <div class="step-number">3</div>
+            <h3>Development & Testing</h3>
+            <p>
+              We build your website using clean, efficient code and conduct
+              thorough testing across all devices and browsers.
+            </p>
+          </div>
+
+          <div class="process-step" data-aos="fade-up" data-aos-delay="400">
+            <div class="step-number">4</div>
+            <h3>Launch & Support</h3>
+            <p>
+              We handle the deployment process and provide ongoing support,
+              maintenance, and optimization services.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="technologies-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Technologies We Use</h2>
+          <p>
+            Cutting-edge tools and frameworks that power modern web experiences
+          </p>
+        </div>
+
+        <div class="tech-categories">
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
+            <h3><i class="fas fa-code"></i> Frontend Technologies</h3>
+            <div class="tech-grid">
+              <div class="tech-item">
+                <i class="fab fa-html5"></i>
+                <span>HTML5</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-css3-alt"></i>
+                <span>CSS3</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-js-square"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-react"></i>
+                <span>React.js</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-vuejs"></i>
+                <span>Vue.js</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-bootstrap"></i>
+                <span>Bootstrap</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
+            <h3><i class="fas fa-server"></i> Backend & CMS</h3>
+            <div class="tech-grid">
+              <div class="tech-item">
+                <i class="fab fa-php"></i>
+                <span>PHP</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-node-js"></i>
+                <span>Node.js</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-wordpress"></i>
+                <span>WordPress</span>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-database"></i>
+                <span>MySQL</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-python"></i>
+                <span>Python</span>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-fire"></i>
+                <span>Firebase</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-category" data-aos="fade-up" data-aos-delay="300">
+            <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+            <div class="tech-grid">
+              <div class="tech-item">
+                <i class="fab fa-git-alt"></i>
+                <span>Git</span>
+              </div>
+              <div class="tech-item">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-cloud"></i>
+                <span>Cloud Hosting</span>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>SSL Security</span>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-search"></i>
+                <span>SEO Tools</span>
+              </div>
+              <div class="tech-item">
+                <i class="fas fa-chart-bar"></i>
+                <span>Analytics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Our Recent Web Projects</h2>
+          <p>
+            Showcasing our expertise through successful website implementations
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <div class="portfolio-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-image">
+              <i class="fas fa-store"></i>
+            </div>
+            <div class="portfolio-content">
+              <h3>Fashion E-commerce Store</h3>
+              <p>
+                A modern online fashion store with advanced filtering, wishlist
+                functionality, and integrated payment processing for seamless
+                shopping experience.
+              </p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">E-commerce</span>
+                <span class="portfolio-tag">Responsive</span>
+                <span class="portfolio-tag">Payment Gateway</span>
+                <span class="portfolio-tag">SEO</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="portfolio-image">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="portfolio-content">
+              <h3>Corporate Business Website</h3>
+              <p>
+                Professional corporate website with service showcases, team
+                profiles, and integrated contact forms to enhance business
+                credibility.
+              </p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Corporate</span>
+                <span class="portfolio-tag">CMS</span>
+                <span class="portfolio-tag">Multi-page</span>
+                <span class="portfolio-tag">Contact Forms</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="portfolio-image">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <div class="portfolio-content">
+              <h3>Restaurant & Food Delivery</h3>
+              <p>
+                Interactive restaurant website with online menu, table
+                reservations, and food delivery integration for enhanced
+                customer experience.
+              </p>
+              <div class="portfolio-tags">
+                <span class="portfolio-tag">Restaurant</span>
+                <span class="portfolio-tag">Online Ordering</span>
+                <span class="portfolio-tag">Reservations</span>
+                <span class="portfolio-tag">Mobile App</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="container">
+        <div class="section-header" data-aos="fade-up">
+<h2>Our Web Development Success</h2>
+        <p>
+            Numbers that demonstrate our commitment to delivering exceptional
+            web solutions
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+            <span class="stat-number">300+</span>
+            <span class="stat-label">Websites Delivered</span>
+          </div>
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+            <span class="stat-number">250+</span>
+            <span class="stat-label">Happy Clients</span>
+          </div>
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+            <span class="stat-number">99%</span>
+            <span class="stat-label">Client Satisfaction</span>
+          </div>
+          <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Support Available</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content" data-aos="fade-up">
+          <h2>Ready to Launch Your Website?</h2>
+          <p>
+            Let's create a stunning website that represents your brand and
+            drives business growth. Our expert developers are ready to bring
+            your vision to life with modern, responsive, and user-friendly web
+            solutions.
+          </p>
+          <div class="cta-buttons">
+            <a href="contact us.html" class="cta-btn-primary">
+              <i class="fas fa-rocket"></i>
+              Start Your Project
+            </a>
+            <a href="opportunities.html" class="cta-btn-secondary">
+              <i class="fas fa-eye"></i>
+              View Portfolio
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<footer class="footer">
+      <div class="footer-top">
+        <div class="footer-container footer-grid">
+          <!-- COMPANY -->
+          <div>
+            <div class="footer-brand">
+              <img
+                src="assets/logo.jpeg"
+                alt="Chaitra Soft Logo"
+                class="footer-logo-img"
+              />
+              <h3 class="footer-logo">Chaitra Soft</h3>
+            </div>
+            <p class="footer-text">
+              Chaitra Soft is a HR and IT solutions company <br>
+              helping organisations find the right talent and <br> adopt modern
+              technologies.
+            </p>
+            <div class="footer-social">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- QUICK LINKS -->
+          <div class="quick-links">
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="About us.html">About Us</a></li>
+              <li><a href="opportunities.html">Opportunities</a></li>
+              <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- INFORMATION -->
+          <div>
+            <h4 class="footer-title">Information</h4>
+            <ul class="footer-contact">
+              <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+              <li><i class="fas fa-envelope"></i> info@chaitrasoft.com</li>
+              <li><i class="fas fa-globe"></i> www.chaitrasoft.com</li>
+            </ul>
+          </div>
+
+          <!-- ADDRESS -->
+          <div>
+            <h4 class="footer-title">Address</h4>
+            <p class="footer-text">
+              <strong>Project Location</strong><br />
+              Manjeera Trinity Corporate<br />
+              Business Centre, Phase-9<br />
+              KPHB, Hyderabad – 500072
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-links">
+          <a href="privacyandpolicy.html">Privacy Policy</a>
+          <a href="termsandcondition.html">Terms & Conditions</a>
+          <a href="#">Site Map</a>
+        </div>
+      </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -766,11 +766,15 @@ tbody tr:last-child td { border-bottom: none; }
   padding: 24px;
   max-width: 400px;
   width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
   box-shadow: 0 20px 60px rgba(0,0,0,0.15);
 }
 
 .modal-box.modal-lg {
   max-width: 640px;
+  max-height: 85vh;
+  overflow-y: auto;
 }
 
 .job-form-grid {
@@ -892,12 +896,19 @@ tbody tr:last-child td { border-bottom: none; }
     padding: 24px;
   }
 
+  .modal-overlay {
+    padding: 10px;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
   .modal-box {
     padding: 16px;
   }
 
   .modal-box.modal-lg {
     max-width: 100%;
+    max-height: 80vh;
   }
 
   .job-form-grid {

@@ -526,6 +526,13 @@ body { padding-top: 90px; }
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
+.page-staffing .services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
 /* Staffing-responsive */
 @media (min-width: 1400px) {
   .page-staffing .services-grid { max-width: 1600px; }
@@ -814,6 +821,13 @@ body { padding-top: 90px; }
 .page-hr-services .cta-btn-secondary:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.page-hr-services .services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
 }
 
 /* HR-services responsive */
@@ -1377,6 +1391,13 @@ body { padding-top: 90px; }
   0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(74,123,200,0.7); }
   70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(74,123,200,0); }
   100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(74,123,200,0); }
+}
+
+.page-software .services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
 }
 
 /* Software-responsive */
@@ -2607,6 +2628,13 @@ body { padding-top: 90px; }
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
+}
+
+.page-website-dev .services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
 }
 
 /* Website-dev responsive */

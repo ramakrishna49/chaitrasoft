@@ -769,6 +769,42 @@ tbody tr:last-child td { border-bottom: none; }
   box-shadow: 0 20px 60px rgba(0,0,0,0.15);
 }
 
+.modal-box.modal-lg {
+  max-width: 640px;
+}
+
+.job-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.job-form-grid .form-group {
+  margin-bottom: 0;
+}
+
+.job-form-grid .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.job-form-grid .form-group.inline-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 24px;
+}
+
+.job-form-grid .form-group.inline-check label {
+  margin-bottom: 0;
+}
+
+.job-form-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
 .modal-box h3 {
   font-size: 17px;
   font-weight: 600;
@@ -854,6 +890,22 @@ tbody tr:last-child td { border-bottom: none; }
 
   .login-card {
     padding: 24px;
+  }
+
+  .modal-box {
+    padding: 16px;
+  }
+
+  .modal-box.modal-lg {
+    max-width: 100%;
+  }
+
+  .job-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .job-form-grid .form-group.full-width {
+    grid-column: 1;
   }
 }
 

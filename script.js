@@ -338,10 +338,15 @@ function renderAdminJobs() {
     return;
   }
 
-  const html = active.map(j => `
-    <div class="job-row" data-title="${(j.title + ' ' + j.category).toLowerCase()}" data-location="${j.location.toLowerCase()}" data-exp="0">
+  const html = active.map(j => {
+    const startDate = j.startDate ? new Date(j.startDate + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
+    const endDate = j.endDate ? new Date(j.endDate + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
+    const dateLabel = startDate && endDate ? `${startDate} - ${endDate}` : (j.createdAt ? `Posted: ${new Date(j.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}` : '');
+    const expVal = j.experience ? (parseInt(j.experience.match(/\d+/)?.[0]) || 0) : 0;
+    return `
+    <div class="job-row" data-title="${(j.title + ' ' + j.category).toLowerCase()}" data-location="${j.location.toLowerCase()}" data-exp="${expVal}">
       <div class="job-row-top">
-        <span>Posted: ${new Date(j.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+        <span>${dateLabel}</span>
         <span class="job-number"><span class="badge badge-green" style="background:#f0fdf4;color:#16a34a;padding:2px 10px;border-radius:20px;font-size:11px;font-weight:600;">${j.type}</span></span>
       </div>
       <div class="job-row-body">
@@ -352,16 +357,17 @@ function renderAdminJobs() {
             <p><i class="fas fa-map-marker-alt"></i> ${j.location}${j.badge ? ` <span style="background:#dbeafe;color:#2563eb;padding:1px 8px;border-radius:10px;font-size:11px;margin-left:6px;">${j.badge}</span>` : ''}</p>
           </div>
         </div>
-        <div class="job-col"><span>CATEGORY</span><strong>${j.category}</strong></div>
-        <div class="job-col"><span>TOOLS</span><strong>${j.tools && j.tools.length ? j.tools.slice(0,2).join(', ') : '--'}</strong></div>
+        <div class="job-col"><span>SALARY</span><strong>${j.salary || '--'}</strong></div>
+        <div class="job-col"><span>EXPERIENCE</span><strong>${j.experience || '--'}</strong></div>
         <div class="job-col action">
           <button onclick="openJobApplyForm('${j.title.replace(/'/g, "\\'")}')">APPLY</button>
         </div>
       </div>
     </div>
-  `).join('');
+  `}).join('');
 
   const container = jobListings.querySelector('.container');
+  container.querySelectorAll('.job-row').forEach(el => el.remove());
   const heading = container ? container.querySelector('.job-listings-title') : null;
   if (heading) {
     heading.insertAdjacentHTML('afterend', html);

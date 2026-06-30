@@ -128,11 +128,11 @@ function animateCounter(el, target) {
 function seedData() {
   if (!localStorage.getItem('chaitra_jobs')) {
     setData('chaitra_jobs', [
-      { id: generateId(), title: 'Senior Frontend Developer', category: 'Software', location: 'Hyderabad', type: 'Full-time', tools: ['React', 'TypeScript', 'Tailwind'], badge: 'New', badgeColor: 'green', active: true, sortOrder: 1, createdAt: '2026-06-25T10:00:00Z' },
-      { id: generateId(), title: 'HR Recruiter', category: 'HR', location: 'Bangalore', type: 'Full-time', tools: ['Sourcing', 'Screening', 'Onboarding'], badge: 'Urgent', badgeColor: 'red', active: true, sortOrder: 2, createdAt: '2026-06-24T10:00:00Z' },
-      { id: generateId(), title: 'Digital Marketing Specialist', category: 'Marketing', location: 'Remote', type: 'Contract', tools: ['SEO', 'Google Ads', 'Analytics'], badge: '', badgeColor: '', active: true, sortOrder: 3, createdAt: '2026-06-23T10:00:00Z' },
-      { id: generateId(), title: 'Node.js Backend Developer', category: 'Software', location: 'Chennai', type: 'Full-time', tools: ['Node.js', 'Express', 'MongoDB'], badge: 'Hot', badgeColor: 'amber', active: true, sortOrder: 4, createdAt: '2026-06-22T10:00:00Z' },
-      { id: generateId(), title: 'Mobile App Developer', category: 'Mobile', location: 'Hyderabad', type: 'Full-time', tools: ['Flutter', 'Dart', 'Firebase'], badge: '', badgeColor: '', active: false, sortOrder: 5, createdAt: '2026-06-21T10:00:00Z' },
+      { id: generateId(), title: 'Senior Frontend Developer', category: 'Software', location: 'Hyderabad', type: 'Full-time', salary: '12 LPA', experience: '3-5 Years', startDate: '2026-07-10', endDate: '2026-08-10', tools: ['React', 'TypeScript', 'Tailwind'], badge: 'New', badgeColor: 'green', active: true, sortOrder: 1, createdAt: '2026-06-25T10:00:00Z' },
+      { id: generateId(), title: 'HR Recruiter', category: 'HR', location: 'Bangalore', type: 'Full-time', salary: '5 LPA', experience: '1-2 Years', startDate: '2026-07-08', endDate: '2026-08-08', tools: ['Sourcing', 'Screening', 'Onboarding'], badge: 'Urgent', badgeColor: 'red', active: true, sortOrder: 2, createdAt: '2026-06-24T10:00:00Z' },
+      { id: generateId(), title: 'Digital Marketing Specialist', category: 'Marketing', location: 'Remote', type: 'Contract', salary: 'Negotiable', experience: '0-2 Years', startDate: '2026-07-05', endDate: '2026-08-05', tools: ['SEO', 'Google Ads', 'Analytics'], badge: '', badgeColor: '', active: true, sortOrder: 3, createdAt: '2026-06-23T10:00:00Z' },
+      { id: generateId(), title: 'Node.js Backend Developer', category: 'Software', location: 'Chennai', type: 'Full-time', salary: '8 LPA', experience: '2-4 Years', startDate: '2026-07-12', endDate: '2026-08-12', tools: ['Node.js', 'Express', 'MongoDB'], badge: 'Hot', badgeColor: 'amber', active: true, sortOrder: 4, createdAt: '2026-06-22T10:00:00Z' },
+      { id: generateId(), title: 'Mobile App Developer', category: 'Mobile', location: 'Hyderabad', type: 'Full-time', salary: '6 LPA', experience: '1-3 Years', startDate: '', endDate: '', tools: ['Flutter', 'Dart', 'Firebase'], badge: '', badgeColor: '', active: false, sortOrder: 5, createdAt: '2026-06-21T10:00:00Z' },
     ]);
   }
 

@@ -530,7 +530,7 @@ section {
   color: var(--accent);
   border: 2px solid var(--accent);
   padding: 8px 20px;
-  border-radius: 25px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -1635,6 +1635,7 @@ textarea {
 .cta-btn-white, .cta-btn-outline,
 .cta-secondary, .cta-btn-secondary,
 .submit-btn, .search-btn, .apply-btn,
+.learn-more-btn,
 .page-opportunities .search-btn,
 .page-opportunities .job-col.action button,
 .page-opportunities .job-card button,

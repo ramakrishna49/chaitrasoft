@@ -22,8 +22,8 @@
   --shadow: 0 10px 30px rgba(44, 90, 160, 0.1);
   --shadow-lg: 0 20px 60px rgba(44, 90, 160, 0.15);
   --shadow-hover: 0 25px 80px rgba(44, 90, 160, 0.2);
-  --border-radius: 10px;
-  --border-radius-sm: 5px;
+  --border-radius: 15px;
+  --border-radius-sm: 8px;
   --border-radius-lg: 16px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --font: "Poppins", sans-serif;
@@ -142,17 +142,7 @@ a {
   font-weight: 600;
 }
 
-.nav-item > a.active::after {
-  content: "";
-  position: absolute;
-  bottom: 2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 3px;
-  background: var(--bg-gradient);
-  border-radius: 2px;
-}
+
 
 .services-main-dropdown {
   position: absolute;
@@ -685,4 +675,40 @@ textarea {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Primary action buttons - pill shape 50px */
+.cta-btn, .cta-primary, .cta-btn-primary,
+.cta-btn-white, .cta-btn-outline,
+.submit-btn, .search-btn, .apply-btn,
+.page-opportunities .search-btn,
+.page-opportunities .job-col.action button,
+.page-opportunities .job-card button,
+.page-opportunities #applyFormContainer .submit-btn,
+.page-contact .submit-btn {
+  border-radius: 50px !important;
+}
+
+/* Secondary/outline buttons - 25px */
+.cta-secondary, .cta-btn-secondary,
+.page-staffing .cta-btn-secondary,
+.page-software .cta-btn-secondary,
+.page-website-dev .cta-btn-secondary,
+.page-hr-services .cta-btn-secondary,
+.page-digital-marketing .cta-btn-secondary,
+.page-mobile-apps .cta-btn-secondary,
+.page-why-choose-us .cta-btn-secondary {
+  border-radius: 25px !important;
+}
+
+/* Small utility buttons - 5px */
+.btn-sm, .btn-icon,
+.page-opportunities .job-badge-site,
+.job-tools-site span {
+  border-radius: 5px !important;
+}
+
+/* Nav dropdown items keep 10px */
+.main-service-item {
+  border-radius: 10px !important;
 }

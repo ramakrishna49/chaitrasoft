@@ -3029,19 +3029,19 @@ body { padding-top: 90px; }
 .page-opportunities .job-search-form { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 16px; align-items: end; }
 .page-opportunities .search-field { position: relative; }
 .page-opportunities .search-field i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 18px; }
-.page-opportunities .search-field input { width: 100%; padding: 14px 14px 14px 45px; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1rem; transition: all 0.3s; }
+.page-opportunities .search-field input { width: 100%; padding: 14px 14px 14px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem; transition: all 0.3s; }
 .page-opportunities .search-field input:focus { border-color: #667eea; outline: none; box-shadow: 0 0 0 3px rgba(102,126,234,0.15); }
-.page-opportunities .search-btn { padding: 14px 32px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 12px; font-weight: 700; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+.page-opportunities .search-btn { padding: 14px 32px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
 .page-opportunities .search-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(102,126,234,0.4); }
 .page-opportunities .jobs { max-width: 1200px; margin: 0 auto; padding: 0 24px 60px; }
 .page-opportunities .jobs h2 { font-size: 2rem; font-weight: 700; color: var(--primary); text-align: center; margin-bottom: 40px; }
 .page-opportunities .jobs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
-.page-opportunities .job-card { background: white; border-radius: 16px; padding: 28px; text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,0.06); transition: all 0.3s; }
+.page-opportunities .job-card { background: white; border-radius: 10px; padding: 28px; text-align: center; box-shadow: 0 8px 30px rgba(0,0,0,0.06); transition: all 0.3s; }
 .page-opportunities .job-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 .page-opportunities .job-card i { font-size: 40px; margin-bottom: 16px; }
 .page-opportunities .job-card h4 { font-size: 1.2rem; color: var(--primary); margin-bottom: 12px; }
 .page-opportunities .job-card p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6; }
-.page-opportunities .job-card button { padding: 10px 24px; border: none; border-radius: 25px; color: white; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+.page-opportunities .job-card button { padding: 10px 24px; border: none; border-radius: 10px; color: white; font-weight: 600; cursor: pointer; transition: all 0.3s; }
 .page-opportunities .job-card button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
 
 .page-opportunities .job-card[data-title="staffing services"] i { color: #38bdf8; }
@@ -3060,7 +3060,7 @@ body { padding-top: 90px; }
 /* Job Listings */
 .page-opportunities .job-listings { max-width: 1200px; margin: 0 auto; padding: 0 24px 60px; }
 .page-opportunities .job-listings-title { font-size: 2rem; font-weight: 700; color: var(--primary); text-align: center; margin-bottom: 40px; }
-.page-opportunities .job-row { background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); margin-bottom: 20px; overflow: hidden; transition: all 0.3s; border: 1px solid #f1f5f9; }
+.page-opportunities .job-row { background: white; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); margin-bottom: 20px; overflow: hidden; transition: all 0.3s; border: 1px solid #f1f5f9; }
 .page-opportunities .job-row:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
 .page-opportunities .job-row-top { display: flex; justify-content: space-between; padding: 12px 24px; background: linear-gradient(135deg, #667eea15, #764ba215); font-size: 0.85rem; color: var(--text-light); border-bottom: 1px solid #f1f5f9; }
 .page-opportunities .job-row-body { display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 16px; padding: 20px 24px; align-items: center; }
@@ -3070,12 +3070,12 @@ body { padding-top: 90px; }
 .page-opportunities .job-col.title p { font-size: 0.9rem; color: var(--text-light); }
 .page-opportunities .job-col span { display: block; font-size: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
 .page-opportunities .job-col strong { font-size: 0.95rem; color: var(--text-dark); }
-.page-opportunities .job-col.action button { padding: 10px 28px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+.page-opportunities .job-col.action button { padding: 10px 28px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
 .page-opportunities .job-col.action button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(102,126,234,0.4); }
 
 .page-opportunities #applyFormContainer { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center; }
 .page-opportunities #applyFormContainer.show { display: flex; }
-.page-opportunities #applyFormContainer .modal { background: white; width: 90%; max-width: 500px; padding: 30px; border-radius: 20px; position: relative; max-height: 90vh; overflow-y: auto; }
+.page-opportunities #applyFormContainer .modal { background: white; width: 90%; max-width: 500px; padding: 30px; border-radius: 10px; position: relative; max-height: 90vh; overflow-y: auto; }
 .page-opportunities #applyFormContainer .close { position: absolute; top: 15px; right: 20px; font-size: 28px; border: none; background: none; cursor: pointer; color: #666; z-index: 1; }
 .page-opportunities #applyFormContainer .modal h2 { font-size: 1.5rem; color: var(--primary); margin-bottom: 20px; }
 .page-opportunities #applyFormContainer .modal label { display: block; margin-bottom: 5px; font-weight: 500; color: var(--text-dark); }
@@ -3083,7 +3083,7 @@ body { padding-top: 90px; }
 .page-opportunities #applyFormContainer .modal select { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px; margin-bottom: 16px; font-size: 1rem; font-family: 'Poppins', sans-serif; }
 .page-opportunities #applyFormContainer .modal input:focus,
 .page-opportunities #applyFormContainer .modal select:focus { border-color: #667eea; outline: none; box-shadow: 0 0 0 3px rgba(102,126,234,0.15); }
-.page-opportunities #applyFormContainer .submit-btn { background: linear-gradient(135deg, #667eea, #764ba2); color: white; width: 100%; padding: 14px; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; font-size: 1rem; transition: all 0.3s; }
+.page-opportunities #applyFormContainer .submit-btn { background: linear-gradient(135deg, #667eea, #764ba2); color: white; width: 100%; padding: 14px; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; font-size: 1rem; transition: all 0.3s; }
 .page-opportunities #applyFormContainer .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(102,126,234,0.4); }
 
 @media (max-width: 900px) {

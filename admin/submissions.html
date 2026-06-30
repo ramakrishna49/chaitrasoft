@@ -80,6 +80,7 @@
                   <th>Type</th>
                   <th>Name</th>
                   <th>Email</th>
+                  <th>Resume</th>
                   <th>Date</th>
                   <th>Status</th>
                   <th style="text-align:right;">Actions</th>
@@ -121,11 +122,13 @@
         return;
       }
       empty.style.display = 'none';
-      tbody.innerHTML = subs.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt)).map(s => `
-        <tr>
+      tbody.innerHTML = subs.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt)).map(s => {
+        const resumeName = s.resumeName || '';
+        return `<tr>
           <td><span class="badge ${s.formType === 'Contact' ? 'badge-blue' : 'badge-purple'}">${s.formType}</span></td>
           <td style="font-weight:500;">${s.name}</td>
           <td>${s.email}</td>
+          <td>${resumeName ? `<span style="font-size:12px;color:var(--primary);"><i class="fas fa-file-pdf"></i> ${resumeName}</span>` : '<span style="font-size:12px;color:var(--text-light);">--</span>'}</td>
           <td style="font-size:12px;color:var(--text-muted);">${timeAgo(s.createdAt)}</td>
           <td>
             <span class="badge ${s.read ? 'badge-slate' : 'badge-green'}">${s.read ? 'Read' : 'New'}</span>
@@ -135,8 +138,8 @@
             <button class="btn-icon edit" onclick="toggleRead('${s.id}')" title="Toggle read status"><i class="fas ${s.read ? 'fa-envelope' : 'fa-envelope-open'}"></i></button>
             <button class="btn-icon delete" onclick="deleteSubmission('${s.id}')" title="Delete"><i class="fas fa-trash"></i></button>
           </td>
-        </tr>
-      `).join('');
+        </tr>`;
+      }).join('');
     }
 
     function viewSubmission(id) {
@@ -150,7 +153,7 @@
         renderSubmissions();
       }
       let details = `<div style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.4);z-index:9998;display:flex;align-items:center;justify-content:center;padding:20px;" onclick="this.remove()">
-        <div style="background:#fff;border-radius:12px;padding:24px;max-width:500px;width:100%;max-height:80vh;overflow-y:auto;" onclick="event.stopPropagation()">
+        <div style="background:#fff;border-radius:10px;padding:24px;max-width:500px;width:100%;max-height:80vh;overflow-y:auto;" onclick="event.stopPropagation()">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
             <h3 style="font-size:17px;">${s.formType} Submission</h3>
             <button style="background:none;border:none;font-size:20px;cursor:pointer;" onclick="this.closest('[style]').parentElement.remove()">&times;</button>
@@ -158,7 +161,11 @@
           <table style="width:100%;border-collapse:collapse;">`;
       for (const [key, val] of Object.entries(s)) {
         if (['id','read','createdAt'].includes(key)) continue;
-        details += `<tr><td style="padding:8px 12px;font-weight:600;font-size:13px;border-bottom:1px solid #f1f5f9;text-transform:capitalize;">${key.replace(/([A-Z])/g,' $1')}</td><td style="padding:8px 12px;font-size:13px;border-bottom:1px solid #f1f5f9;">${val}</td></tr>`;
+        if (key === 'resumeName' && val) {
+          details += `<tr><td style="padding:8px 12px;font-weight:600;font-size:13px;border-bottom:1px solid #f1f5f9;text-transform:capitalize;">Resume</td><td style="padding:8px 12px;font-size:13px;border-bottom:1px solid #f1f5f9;"><i class="fas fa-file-pdf" style="color:#e74c3c;"></i> ${val}</td></tr>`;
+        } else if (key !== 'resumeName') {
+          details += `<tr><td style="padding:8px 12px;font-weight:600;font-size:13px;border-bottom:1px solid #f1f5f9;text-transform:capitalize;">${key.replace(/([A-Z])/g,' $1')}</td><td style="padding:8px 12px;font-size:13px;border-bottom:1px solid #f1f5f9;">${val}</td></tr>`;
+        }
       }
       details += `</table>
           <div style="margin-top:16px;text-align:right;">
@@ -193,9 +200,9 @@
     function exportCSV() {
       const subs = getData('chaitra_submissions', []);
       if (subs.length === 0) { toast('No data to export.', 'error'); return; }
-      const headers = ['Type','Name','Email','Phone','Message','Date','Status'];
+      const headers = ['Type','Name','Email','Phone','Message','Resume','Date','Status'];
       const rows = subs.map(s => [
-        s.formType, s.name, s.email, s.phone || '', s.message || s.position || '', formatDate(s.createdAt), s.read ? 'Read' : 'New'
+        s.formType, s.name, s.email, s.phone || '', s.message || s.position || '', s.resumeName || '', formatDate(s.createdAt), s.read ? 'Read' : 'New'
       ]);
       const csv = [headers.join(','), ...rows.map(r => r.map(v => `"${v}"`).join(','))].join('\n');
       const blob = new Blob([csv], { type: 'text/csv' });

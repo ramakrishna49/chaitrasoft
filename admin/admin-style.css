@@ -18,7 +18,7 @@
   --sidebar-active: #0f172a;
   --sidebar-text: #94a3b8;
   --sidebar-text-active: #ffffff;
-  --bg-page: #f1f5f9;
+  --bg-page: #f8fafc;
   --card-bg: #ffffff;
   --border: #e2e8f0;
   --text-dark: #0f172a;
@@ -51,7 +51,7 @@ ul { list-style: none; }
   width: 100%;
   max-width: 420px;
   background: var(--card-bg);
-  border-radius: 16px;
+  border-radius: 10px;
   box-shadow: 0 20px 60px rgba(44, 90, 160, 0.12);
   padding: 40px;
 }
@@ -64,7 +64,7 @@ ul { list-style: none; }
 .login-logo img {
   height: 64px;
   width: auto;
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 .login-logo h1 {
@@ -84,7 +84,7 @@ ul { list-style: none; }
   background: #fef2f2;
   color: var(--danger);
   border: 1px solid #fecaca;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 10px 14px;
   font-size: 13px;
   margin-bottom: 16px;
@@ -111,7 +111,7 @@ ul { list-style: none; }
   width: 100%;
   padding: 10px 14px;
   border: 1.5px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 14px;
   font-family: var(--font);
   color: var(--text-dark);
@@ -135,7 +135,7 @@ ul { list-style: none; }
   gap: 8px;
   padding: 10px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 14px;
   font-weight: 600;
   font-family: var(--font);
@@ -182,7 +182,7 @@ ul { list-style: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
   font-size: 13px;
@@ -255,7 +255,7 @@ ul { list-style: none; }
   align-items: center;
   gap: 12px;
   padding: 10px 14px;
-  border-radius: 8px;
+  border-radius: 10px;
   color: var(--sidebar-text);
   font-size: 14px;
   font-weight: 500;
@@ -289,7 +289,7 @@ ul { list-style: none; }
   align-items: center;
   gap: 12px;
   padding: 10px 14px;
-  border-radius: 8px;
+  border-radius: 10px;
   color: var(--sidebar-text);
   font-size: 14px;
   font-weight: 500;
@@ -405,7 +405,7 @@ ul { list-style: none; }
 
 .stat-card {
   background: var(--card-bg);
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   padding: 20px;
   transition: box-shadow 0.2s;
@@ -454,7 +454,7 @@ ul { list-style: none; }
 /* Cards */
 .card {
   background: var(--card-bg);
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   overflow: hidden;
 }
@@ -515,7 +515,7 @@ tbody tr:last-child td { border-bottom: none; }
 .badge {
   display: inline-block;
   padding: 3px 10px;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 11px;
   font-weight: 600;
 }
@@ -578,7 +578,7 @@ tbody tr:last-child td { border-bottom: none; }
 .filter-bar select {
   padding: 8px 12px;
   border: 1.5px solid var(--border);
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 13px;
   font-family: var(--font);
   color: var(--text-dark);
@@ -601,7 +601,7 @@ tbody tr:last-child td { border-bottom: none; }
 .grid-item {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   transition: box-shadow 0.2s;
 }
@@ -698,7 +698,7 @@ tbody tr:last-child td { border-bottom: none; }
 .settings-card {
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 20px;
 }
 
@@ -723,7 +723,7 @@ tbody tr:last-child td { border-bottom: none; }
 
 .toast {
   padding: 12px 20px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 13px;
   font-weight: 500;
   color: #fff;
@@ -762,7 +762,7 @@ tbody tr:last-child td { border-bottom: none; }
 
 .modal-box {
   background: var(--card-bg);
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 24px;
   max-width: 400px;
   width: 100%;
@@ -803,7 +803,7 @@ tbody tr:last-child td { border-bottom: none; }
 /* Alert */
 .alert {
   padding: 10px 14px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 13px;
   margin-bottom: 16px;
 }

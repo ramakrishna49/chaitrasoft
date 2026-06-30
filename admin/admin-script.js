@@ -139,7 +139,7 @@ function seedData() {
   if (!localStorage.getItem('chaitra_submissions')) {
     setData('chaitra_submissions', [
       { id: generateId(), formType: 'Contact', name: 'Ravi Kumar', email: 'ravi@email.com', phone: '9876543210', message: 'Interested in your staffing services for our Bangalore office.', read: false, createdAt: '2026-06-29T14:30:00Z' },
-      { id: generateId(), formType: 'Career', name: 'Sneha Reddy', email: 'sneha@email.com', phone: '8765432109', position: 'Frontend Developer', experience: '3 years', read: false, createdAt: '2026-06-28T11:20:00Z' },
+      { id: generateId(), formType: 'Career', name: 'Sneha Reddy', email: 'sneha@email.com', phone: '8765432109', position: 'Frontend Developer', experience: '3 years', resumeName: 'Sneha_Resume.pdf', read: false, createdAt: '2026-06-28T11:20:00Z' },
       { id: generateId(), formType: 'Contact', name: 'Anil Verma', email: 'anil@email.com', phone: '7654321098', message: 'Need web development services for our e-commerce platform.', read: true, createdAt: '2026-06-27T09:15:00Z' },
       { id: generateId(), formType: 'Career', name: 'Priya Sharma', email: 'priya@email.com', phone: '6543210987', position: 'HR Executive', experience: '5 years', read: true, createdAt: '2026-06-26T16:45:00Z' },
       { id: generateId(), formType: 'Contact', name: 'Mohan Das', email: 'mohan@email.com', phone: '5432109876', message: 'Looking for digital marketing services for our startup.', read: false, createdAt: '2026-06-25T08:00:00Z' },

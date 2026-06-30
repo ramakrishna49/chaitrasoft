@@ -192,11 +192,40 @@ function initContactForm() {
     });
     setData('chaitra_submissions', subs);
 
-    alert('Thank you for your message! We will get back to you soon.');
+    showGooglePopup('Thank you! Your response has been recorded.');
     this.reset();
   });
 }
 initContactForm();
+
+// ============================================
+// GOOGLE-STYLE SUBMISSION POPUP
+// ============================================
+function showGooglePopup(message) {
+  const existing = document.querySelector('.google-popup-overlay');
+  if (existing) existing.remove();
+
+  const overlay = document.createElement('div');
+  overlay.className = 'google-popup-overlay';
+  overlay.id = 'googlePopup';
+  overlay.innerHTML = `
+    <div class="google-popup">
+      <div class="google-popup-icon">
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="#34a853">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+      </div>
+      <h3>${message}</h3>
+      <p style="color:#5f6368;font-size:14px;margin-bottom:24px;">Your response has been saved.</p>
+      <button onclick="document.getElementById('googlePopup').remove()" style="background:#1a73e8;color:white;border:none;padding:10px 24px;border-radius:4px;font-weight:500;cursor:pointer;font-family:'Poppins',sans-serif;">OK</button>
+    </div>`;
+  document.body.appendChild(overlay);
+
+  setTimeout(() => {
+    const p = document.getElementById('googlePopup');
+    if (p) p.remove();
+  }, 5000);
+}
 
 // ============================================
 // CAREER APPLY FORM - OPPORTUNITIES PAGE
@@ -212,6 +241,8 @@ function initApplyForm() {
     const phone = this.querySelector('[name="phone"]').value.trim();
     const jobTitle = document.getElementById('jobTitleInput')?.value || '';
     const service = document.getElementById('serviceSelect')?.value || '';
+    const resumeInput = this.querySelector('[name="resume"]');
+    const resumeName = resumeInput && resumeInput.files && resumeInput.files[0] ? resumeInput.files[0].name : '';
 
     if (!name || !email || !phone) {
       alert('Please fill in all required fields.');
@@ -227,12 +258,13 @@ function initApplyForm() {
       phone,
       position: jobTitle,
       service,
+      resumeName,
       read: false,
       createdAt: new Date().toISOString(),
     });
     setData('chaitra_submissions', subs);
 
-    alert('Application submitted successfully! We will contact you soon.');
+    showGooglePopup('Thank you! Your application has been received.');
     closeApplyForm();
     this.reset();
   });

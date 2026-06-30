@@ -322,13 +322,21 @@ renderTestimonials();
 // ============================================
 function renderAdminJobs() {
   const jobListings = document.getElementById('jobListings');
+  const noJobs = document.getElementById('noJobs');
   if (!jobListings) return;
+  if (noJobs) noJobs.style.display = 'none';
 
   const jobs = getData('chaitra_jobs', []);
-  if (jobs.length === 0) return;
+  if (jobs.length === 0) {
+    if (noJobs) noJobs.style.display = 'block';
+    return;
+  }
 
   const active = jobs.filter(j => j.active).sort((a,b) => a.sortOrder - b.sortOrder);
-  if (active.length === 0) return;
+  if (active.length === 0) {
+    if (noJobs) noJobs.style.display = 'block';
+    return;
+  }
 
   const html = active.map(j => `
     <div class="job-row" data-title="${(j.title + ' ' + j.category).toLowerCase()}" data-location="${j.location.toLowerCase()}" data-exp="0">

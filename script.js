@@ -242,31 +242,46 @@ function initApplyForm() {
     const jobTitle = document.getElementById('jobTitleInput')?.value || '';
     const service = document.getElementById('serviceSelect')?.value || '';
     const resumeInput = this.querySelector('[name="resume"]');
-    const resumeName = resumeInput && resumeInput.files && resumeInput.files[0] ? resumeInput.files[0].name : '';
+    const resumeFile = resumeInput && resumeInput.files && resumeInput.files[0];
+    const resumeName = resumeFile ? resumeFile.name : '';
 
     if (!name || !email || !phone) {
       alert('Please fill in all required fields.');
       return;
     }
 
-    const subs = getData('chaitra_submissions', []);
-    subs.push({
-      id: generateId(),
-      formType: 'Career',
-      name,
-      email,
-      phone,
-      position: jobTitle,
-      service,
-      resumeName,
-      read: false,
-      createdAt: new Date().toISOString(),
-    });
-    setData('chaitra_submissions', subs);
+    const formEl = this;
 
-    showGooglePopup('Thank you! Your application has been received.');
-    closeApplyForm();
-    this.reset();
+    function saveSubmission(resumeBase64) {
+      const subs = getData('chaitra_submissions', []);
+      subs.push({
+        id: generateId(),
+        formType: 'Career',
+        name,
+        email,
+        phone,
+        position: jobTitle,
+        service,
+        resumeName,
+        resumeData: resumeBase64 || '',
+        read: false,
+        createdAt: new Date().toISOString(),
+      });
+      setData('chaitra_submissions', subs);
+      showGooglePopup('Thank you! Your application has been received.');
+      closeApplyForm();
+      formEl.reset();
+    }
+
+    if (resumeFile) {
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        saveSubmission(ev.target.result);
+      };
+      reader.readAsDataURL(resumeFile);
+    } else {
+      saveSubmission('');
+    }
   });
 }
 initApplyForm();

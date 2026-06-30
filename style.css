@@ -1106,7 +1106,7 @@ section {
 /* COMPANY INFO SECTION */
 .company-info-section {
   padding: 80px 20px;
-  background: var(--bg-light);
+  background: #fff;
 }
 
 .info-grid {
@@ -1667,7 +1667,7 @@ textarea {
 /* Why Choose section - improve text visibility */
 .company-info-section {
   padding: 80px 20px;
-  background: var(--bg-light);
+  background: #fff;
 }
 
 .company-info-section .section-header h2 {

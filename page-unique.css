@@ -2700,8 +2700,10 @@ body.page-home { padding-top: 0; }
 .page-about .hero-content { position: relative; z-index: 3; max-width: 900px; text-align: center; color: white; }
 .page-about .hero-content h1 { font-size: 4.5rem; font-weight: 800; margin-bottom: 20px; }
 .page-about .hero-content .subtitle { font-size: 1.3rem; opacity: 0.9; margin-bottom: 30px; line-height: 1.8; }
-.page-about .hero-content .cta-btn { background: var(--bg-gradient); color: white; padding: 15px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
-.page-about .hero-content .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(44, 90, 160, 0.3); }
+.page-about .hero-content .cta-btn,
+.page-about .about-text .cta-btn { background: var(--bg-gradient); color: white; padding: 15px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+.page-about .hero-content .cta-btn:hover,
+.page-about .about-text .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(44, 90, 160, 0.3); }
 .page-about .hero-shapes { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
 .page-about .shape { position: absolute; border: 2px solid rgba(255,255,255,0.1); }
 .page-about .shape.circle { width: 300px; height: 300px; border-radius: 50%; top: -50px; right: -50px; animation: rotate 20s linear infinite; }

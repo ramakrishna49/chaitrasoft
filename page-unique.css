@@ -215,7 +215,7 @@ body.page-home { padding-top: 0; }
 .page-staffing .cta-btn {
   padding: 15px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -499,7 +499,7 @@ body.page-home { padding-top: 0; }
   background: var(--bg-gradient);
   color: white;
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -513,7 +513,7 @@ body.page-home { padding-top: 0; }
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -655,7 +655,7 @@ body.page-home { padding-top: 0; }
 .page-hr-services .cta-btn {
   padding: 15px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -796,7 +796,7 @@ body.page-home { padding-top: 0; }
   background: var(--bg-gradient);
   color: white;
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -810,7 +810,7 @@ body.page-home { padding-top: 0; }
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -941,7 +941,7 @@ body.page-home { padding-top: 0; }
 .page-software .cta-btn {
   padding: 15px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -1341,7 +1341,7 @@ body.page-home { padding-top: 0; }
   background: var(--bg-gradient);
   color: white;
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -1355,7 +1355,7 @@ body.page-home { padding-top: 0; }
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -1539,7 +1539,7 @@ body.page-home { padding-top: 0; }
 .page-digital-marketing .cta-btn {
   padding: 15px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -1640,7 +1640,7 @@ body.page-home { padding-top: 0; }
   background: var(--bg-gradient);
   color: white;
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -1654,7 +1654,7 @@ body.page-home { padding-top: 0; }
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -1788,7 +1788,7 @@ body.page-home { padding-top: 0; }
 .page-mobile-apps .cta-btn {
   padding: 15px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -2069,7 +2069,7 @@ body.page-home { padding-top: 0; }
   background: var(--bg-gradient);
   color: white;
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -2083,7 +2083,7 @@ body.page-home { padding-top: 0; }
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -2138,6 +2138,7 @@ body.page-home { padding-top: 0; }
   min-height: 400px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .page-website-dev .hero-video {
@@ -2201,7 +2202,7 @@ body.page-home { padding-top: 0; }
 .page-website-dev .cta-btn {
   padding: 15px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
@@ -2578,7 +2579,7 @@ body.page-home { padding-top: 0; }
   background: var(--bg-gradient);
   color: white;
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -2592,7 +2593,7 @@ body.page-home { padding-top: 0; }
   color: var(--primary);
   border: 2px solid var(--primary);
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
@@ -2699,8 +2700,8 @@ body.page-home { padding-top: 0; }
 .page-about .hero-content { position: relative; z-index: 3; max-width: 900px; text-align: center; color: white; }
 .page-about .hero-content h1 { font-size: 4.5rem; font-weight: 800; margin-bottom: 20px; }
 .page-about .hero-content .subtitle { font-size: 1.3rem; opacity: 0.9; margin-bottom: 30px; line-height: 1.8; }
-.page-about .hero-content .cta-btn { background: white; color: #2b77ad; padding: 15px 40px; border-radius: 5px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
-.page-about .hero-content .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.page-about .hero-content .cta-btn { background: var(--bg-gradient); color: white; padding: 15px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; }
+.page-about .hero-content .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(44, 90, 160, 0.3); }
 .page-about .hero-shapes { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
 .page-about .shape { position: absolute; border: 2px solid rgba(255,255,255,0.1); }
 .page-about .shape.circle { width: 300px; height: 300px; border-radius: 50%; top: -50px; right: -50px; animation: rotate 20s linear infinite; }
@@ -2740,7 +2741,7 @@ body.page-home { padding-top: 0; }
 .page-about .cta-section::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); animation: rotate 20s linear infinite; }
 .page-about .cta-content h2 { font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; position: relative; z-index: 1; }
 .page-about .cta-content p { font-size: 1.3rem; margin-bottom: 3rem; opacity: 0.95; position: relative; z-index: 1; }
-.page-about .cta-content .cta-btn { background: white; color: #2b77ad; padding: 15px 40px; border-radius: 5px; text-decoration: none; font-weight: 600; display: inline-block; position: relative; z-index: 1; transition: all 0.3s; }
+.page-about .cta-content .cta-btn { background: white; color: #2b77ad; padding: 15px 40px; border-radius: 10px; text-decoration: none; font-weight: 600; display: inline-block; position: relative; z-index: 1; transition: all 0.3s; }
 .page-about .cta-content .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
 @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 @keyframes float { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
@@ -2790,7 +2791,7 @@ body.page-home { padding-top: 0; }
    contactus.html
    ============================================ */
 .page-contact { padding-top: 90px; }
-.page-contact .hero { background: var(--bg-gradient); padding: 100px 20px 80px; text-align: center; color: white; position: relative; overflow: hidden; }
+.page-contact .hero { background: var(--bg-gradient); padding: 100px 20px 80px; text-align: center; color: white; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 40vh; }
 .page-contact .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; }
 .page-contact .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
 .page-contact .contact-section { padding: 100px 20px; background: white; }
@@ -2808,7 +2809,7 @@ body.page-home { padding-top: 0; }
 .page-contact .form-group input, .page-contact .form-group textarea { width: 100%; padding: 15px; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1rem; transition: var(--transition); font-family: "Poppins", sans-serif; }
 .page-contact .form-group input:focus, .page-contact .form-group textarea:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px rgba(107,155,210,0.1); }
 .page-contact .form-group textarea { height: 150px; resize: vertical; }
-.page-contact .submit-btn { background: var(--bg-gradient); color: white; padding: 15px 40px; border: none; border-radius: 5px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition); }
+.page-contact .submit-btn { background: var(--bg-gradient); color: white; padding: 15px 40px; border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: var(--transition); }
 .page-contact .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
 .page-contact .findus-section { padding: 100px 20px; background: var(--bg-light); }
 .page-contact .findus-section .section-title { font-size: 2.5rem; font-weight: 700; color: var(--primary); text-align: center; margin-bottom: 60px; }
@@ -2859,7 +2860,7 @@ body.page-home { padding-top: 0; }
 .page-opportunities .search-field i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 18px; }
 .page-opportunities .search-field input { width: 100%; padding: 14px 14px 14px 45px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 1rem; transition: all 0.3s; }
 .page-opportunities .search-field input:focus { border-color: #667eea; outline: none; box-shadow: 0 0 0 3px rgba(102,126,234,0.15); }
-.page-opportunities .search-btn { padding: 14px 32px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 5px; font-weight: 700; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+.page-opportunities .search-btn { padding: 14px 32px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
 .page-opportunities .search-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(102,126,234,0.4); }
 .page-opportunities .jobs { max-width: 1200px; margin: 0 auto; padding: 0 24px 60px; }
 .page-opportunities .jobs h2 { font-size: 2rem; font-weight: 700; color: var(--primary); text-align: center; margin-bottom: 40px; }
@@ -2869,7 +2870,7 @@ body.page-home { padding-top: 0; }
 .page-opportunities .job-card i { font-size: 40px; margin-bottom: 16px; }
 .page-opportunities .job-card h4 { font-size: 1.2rem; color: var(--primary); margin-bottom: 12px; }
 .page-opportunities .job-card p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6; }
-.page-opportunities .job-card button { padding: 10px 24px; border: none; border-radius: 5px; color: white; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+.page-opportunities .job-card button { padding: 10px 24px; border: none; border-radius: 10px; color: white; font-weight: 600; cursor: pointer; transition: all 0.3s; }
 .page-opportunities .job-card button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
 
 .page-opportunities .job-card[data-title="staffing services"] i { color: #38bdf8; }
@@ -2898,7 +2899,7 @@ body.page-home { padding-top: 0; }
 .page-opportunities .job-col.title p { font-size: 0.9rem; color: var(--text-light); }
 .page-opportunities .job-col span { display: block; font-size: 0.75rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
 .page-opportunities .job-col strong { font-size: 0.95rem; color: var(--text-dark); }
-.page-opportunities .job-col.action button { padding: 10px 28px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 5px; font-weight: 600; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+.page-opportunities .job-col.action button { padding: 10px 28px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
 .page-opportunities .job-col.action button:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(102,126,234,0.4); }
 
 .job-badge-site {
@@ -2938,7 +2939,7 @@ body.page-home { padding-top: 0; }
 .page-opportunities #applyFormContainer .modal select { width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 10px; margin-bottom: 16px; font-size: 1rem; font-family: 'Poppins', sans-serif; }
 .page-opportunities #applyFormContainer .modal input:focus,
 .page-opportunities #applyFormContainer .modal select:focus { border-color: #667eea; outline: none; box-shadow: 0 0 0 3px rgba(102,126,234,0.15); }
-.page-opportunities #applyFormContainer .submit-btn { background: linear-gradient(135deg, #667eea, #764ba2); color: white; width: 100%; padding: 14px; border: none; border-radius: 5px; font-weight: 600; cursor: pointer; font-size: 1rem; transition: all 0.3s; }
+.page-opportunities #applyFormContainer .submit-btn { background: linear-gradient(135deg, #667eea, #764ba2); color: white; width: 100%; padding: 14px; border: none; border-radius: 10px; font-weight: 600; cursor: pointer; font-size: 1rem; transition: all 0.3s; }
 .page-opportunities #applyFormContainer .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(102,126,234,0.4); }
 
 @media (max-width: 900px) {
@@ -2967,7 +2968,7 @@ body.page-home { padding-top: 0; }
 .page-why-choose-us .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
 .page-why-choose-us .hero p { font-size: 1.3rem; margin-bottom: 30px; opacity: 0.9; }
 .page-why-choose-us .hero-cta { display: flex; justify-content: center; gap: 20px; margin-top: 40px; flex-wrap: wrap; }
-.page-why-choose-us .cta-btn { padding: 15px 30px; border: none; border-radius: 5px; font-weight: 600; text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px; }
+.page-why-choose-us .cta-btn { padding: 15px 30px; border: none; border-radius: 10px; font-weight: 600; text-decoration: none; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px; }
 .page-why-choose-us .cta-primary { background: white; color: var(--primary); }
 .page-why-choose-us .cta-secondary { background: transparent; color: white; border: 2px solid white; }
 .page-why-choose-us .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
@@ -3026,8 +3027,8 @@ body.page-home { padding-top: 0; }
 .page-why-choose-us .cta-content h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
 .page-why-choose-us .cta-content p { font-size: 1.2rem; color: var(--text-light); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
 .page-why-choose-us .cta-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-.page-why-choose-us .cta-btn-primary { background: var(--bg-gradient); color: white; padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px; }
-.page-why-choose-us .cta-btn-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); padding: 15px 30px; border-radius: 5px; text-decoration: none; font-weight: 600; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px; }
+.page-why-choose-us .cta-btn-primary { background: var(--bg-gradient); color: white; padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: 600; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px; }
+.page-why-choose-us .cta-btn-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); padding: 15px 30px; border-radius: 10px; text-decoration: none; font-weight: 600; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px; }
 .page-why-choose-us .cta-btn-primary:hover,
 .page-why-choose-us .cta-btn-secondary:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
 .page-why-choose-us .section-header { text-align: center; margin-bottom: 60px; }

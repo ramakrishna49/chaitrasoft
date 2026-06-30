@@ -325,8 +325,7 @@ section {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  padding-top: 10%;
-  padding-left: 4%;
+  padding: 0 20px;
 }
 
 .hero h1 {
@@ -1479,8 +1478,7 @@ section {
   .hero h1 { font-size: 1.8rem; }
 
   .hero-content {
-    padding: 0 10px;
-    padding-top: 25% !important;
+    padding: 0 15px;
   }
 
   .section-header h2 { font-size: 1.8rem; }
@@ -1605,39 +1603,89 @@ textarea {
   box-shadow: var(--shadow-hover);
 }
 
-/* Button border-radius overrides (reference uses pill shape) */
+/* All buttons border-radius 10px */
 .cta-btn, .cta-primary, .cta-btn-primary,
 .cta-btn-white, .cta-btn-outline,
+.cta-secondary, .cta-btn-secondary,
 .submit-btn, .search-btn, .apply-btn,
 .page-opportunities .search-btn,
 .page-opportunities .job-col.action button,
 .page-opportunities .job-card button,
 .page-opportunities #applyFormContainer .submit-btn,
-.page-contact .submit-btn {
-  border-radius: 50px;
-}
-
-.cta-secondary, .cta-btn-secondary,
+.page-contact .submit-btn,
 .page-staffing .cta-btn-secondary,
 .page-software .cta-btn-secondary,
 .page-website-dev .cta-btn-secondary,
 .page-hr-services .cta-btn-secondary,
 .page-digital-marketing .cta-btn-secondary,
 .page-mobile-apps .cta-btn-secondary,
-.page-why-choose-us .cta-btn-secondary {
-  border-radius: 25px;
-}
-
-/* Small utility buttons */
+.page-why-choose-us .cta-btn-secondary,
 .btn-sm, .btn-icon,
 .page-opportunities .job-badge-site,
 .job-tools-site span {
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 /* Nav dropdown items */
 .main-service-item {
   border-radius: 10px;
+}
+
+/* Service card images - uniform size */
+.service-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* Arrow for service feature list items */
+.service-features {
+  list-style: none;
+  text-align: left;
+}
+
+.service-features li {
+  position: relative;
+  padding: 8px 0 8px 28px;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-features li::before {
+  content: "\2192";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Why Choose section - improve text visibility */
+.company-info-section {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.company-info-section .section-header h2 {
+  color: var(--primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.company-info-section .section-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.info-card p {
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
 
 /* Extra variables for admin pages */

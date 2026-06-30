@@ -98,56 +98,48 @@
 
     <section class="contact-section">
       <div class="container">
-        <h2 class="section-title">Contact Info</h2>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-desc">Have a question or project in mind? We'd love to hear from you.</p>
         <div class="contact-grid">
-          <div class="contact-info">
-            <h3><i class="fas fa-headset"></i> Connect</h3>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <div>+91 98765 43210</div>
+          <div>
+            <div class="contact-info-card">
+              <div class="info-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <h4>Phone</h4>
+                <p>+91 98765 43210</p>
+              </div>
             </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <div>info@chaitrasoft.com</div>
+            <div class="contact-info-card">
+              <div class="info-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h4>Email</h4>
+                <p>info@chaitrasoft.com</p>
+              </div>
             </div>
-            <div class="contact-item">
-              <i class="fas fa-clock"></i>
-              <div>Mon-Fri: 9AM-7PM</div>
+            <div class="contact-info-card">
+              <div class="info-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <h4>Working Hours</h4>
+                <p>Mon-Fri: 9AM - 7PM</p>
+              </div>
             </div>
           </div>
-          <div class="contact-form">
-            <h3 style="font-size: 1.6rem; color: #333; margin-bottom: 25px">
-              Send Message
-            </h3>
+          <div class="form-card">
+            <h3>Send Message</h3>
             <form id="contactForm">
               <div class="form-group">
-                <input type="text" id="name" placeholder="Name *" required />
+                <input type="text" id="name" placeholder="Your Name *" required />
               </div>
               <div class="form-group">
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Email (must end with @gmail.com) *"
-                  required
-                />
+                <input type="email" id="email" placeholder="Email Address *" required />
               </div>
               <div class="form-group">
-                <input
-                  type="tel"
-                  id="phone"
-                  placeholder="Phone Number (10 digits) *"
-                  required
-                  maxlength="10"
-                />
+                <input type="tel" id="phone" placeholder="Phone Number *" required maxlength="10" />
               </div>
               <div class="form-group">
-                <textarea
-                  id="message"
-                  placeholder="Message *"
-                  required
-                ></textarea>
+                <textarea id="message" placeholder="Your Message *" required></textarea>
               </div>
-              <button type="submit" class="submit-btn">Send</button>
+              <button type="submit" class="submit-btn">Send Message</button>
             </form>
           </div>
         </div>

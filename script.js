@@ -354,7 +354,8 @@ function renderAdminJobs() {
           <img src="https://cdn-icons-png.flaticon.com/512/942/942748.png" alt="">
           <div>
             <h3>${j.title}</h3>
-            <p><i class="fas fa-map-marker-alt"></i> ${j.location}${j.badge ? ` <span style="background:#dbeafe;color:#2563eb;padding:1px 8px;border-radius:10px;font-size:11px;margin-left:6px;">${j.badge}</span>` : ''}</p>
+            <p><i class="fas fa-map-marker-alt"></i> ${j.location}${j.badge ? ` <span class="job-badge-site">${j.badge}</span>` : ''}</p>
+            ${j.tools && j.tools.length ? `<div class="job-tools-site">${j.tools.map(t => `<span>${t}</span>`).join('')}</div>` : ''}
           </div>
         </div>
         <div class="job-col"><span>SALARY</span><strong>${j.salary || '--'}</strong></div>

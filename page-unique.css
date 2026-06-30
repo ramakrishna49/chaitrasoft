@@ -2739,7 +2739,7 @@ body.page-home { padding-top: 0; }
 .page-about .feature-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .page-about .feature-card h3 { font-size: 1.8rem; font-weight: 800; margin-bottom: 1.5rem; background: linear-gradient(135deg, #4a7bc8, #2c5aa0); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .page-about .feature-card p { font-size: 1.1rem; color: var(--text-light); line-height: 1.9; }
-.page-about .cta-section { background: linear-gradient(135deg, #1a365d, #2b77ad); padding: 100px 2.5rem; text-align: center; color: white; margin: 100px 2.5rem 0; border-radius: 28px; position: relative; overflow: hidden; }
+.page-about .cta-section { background: linear-gradient(135deg, #1a365d, #2b77ad); padding: 100px 20px; text-align: center; color: white; margin: 100px 0 0; position: relative; overflow: hidden; }
 .page-about .cta-section::before { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); animation: rotate 20s linear infinite; }
 .page-about .cta-content h2 { font-size: 3rem; font-weight: 800; margin-bottom: 1.5rem; position: relative; z-index: 1; }
 .page-about .cta-content p { font-size: 1.3rem; margin-bottom: 3rem; opacity: 0.95; position: relative; z-index: 1; }
@@ -2760,7 +2760,7 @@ body.page-home { padding-top: 0; }
   .page-about .about-text .typing-container { justify-content: center; min-height: auto; margin-bottom: 1.5rem; }
   .page-about .vision-grid,
   .page-about .features-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-  .page-about .cta-section { margin: 60px 1.5rem 0; }
+  .page-about .cta-section { margin: 60px 0 0; }
 }
 @media (max-width: 768px) {
   .page-about .section-title { font-size: 2.5rem; }
@@ -2785,7 +2785,7 @@ body.page-home { padding-top: 0; }
   .page-about .vision-grid, .page-about .features-grid { grid-template-columns: 1fr; }
   .page-about .vision-card, .page-about .feature-card { padding: 2rem 1.25rem; }
   .page-about .about-main, .page-about .vision-section, .page-about .features { padding: 40px 1rem; }
-  .page-about .cta-section { padding: 60px 1.5rem; margin: 40px 1rem 0; }
+  .page-about .cta-section { padding: 60px 1rem; margin: 40px 0 0; }
 }
 
 

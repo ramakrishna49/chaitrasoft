@@ -131,8 +131,10 @@
           <td>${resumeName ? `<div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;">
             <i class="fas fa-file-pdf" style="color:#e74c3c;font-size:13px;"></i>
             <span style="font-size:12px;color:var(--text-muted);">${resumeName}</span>
+            ${s.resumeData ? `
             <button onclick="viewResume('${s.id}')" title="View" style="border:none;background:#eff6ff;color:var(--primary);padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;"><i class="fas fa-eye"></i></button>
             <button onclick="downloadResume('${s.id}')" title="Download" style="border:none;background:#f0fdf4;color:var(--success);padding:2px 8px;border-radius:4px;cursor:pointer;font-size:11px;"><i class="fas fa-download"></i></button>
+            ` : '<span style="font-size:10px;color:var(--text-light);font-style:italic;">(file not available)</span>'}
           </div>` : '<span style="font-size:12px;color:var(--text-light);">--</span>'}</td>
           <td style="font-size:12px;color:var(--text-muted);">${timeAgo(s.createdAt)}</td>
           <td>

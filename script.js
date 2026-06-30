@@ -236,51 +236,50 @@ function initApplyForm() {
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    const name = this.querySelector('[name="name"]').value.trim();
-    const email = this.querySelector('[name="email"]').value.trim();
-    const phone = this.querySelector('[name="phone"]').value.trim();
+    const formEl = this;
+    const name = formEl.querySelector('[name="name"]').value.trim();
+    const email = formEl.querySelector('[name="email"]').value.trim();
+    const phone = formEl.querySelector('[name="phone"]').value.trim();
     const jobTitle = document.getElementById('jobTitleInput')?.value || '';
     const service = document.getElementById('serviceSelect')?.value || '';
-    const resumeInput = this.querySelector('[name="resume"]');
+    const resumeInput = formEl.querySelector('[name="resume"]');
     const resumeFile = resumeInput && resumeInput.files && resumeInput.files[0];
-    const resumeName = resumeFile ? resumeFile.name : '';
 
     if (!name || !email || !phone) {
       alert('Please fill in all required fields.');
       return;
     }
 
-    const formEl = this;
-
-    function saveSubmission(resumeBase64) {
+    function doSave(entry) {
       const subs = getData('chaitra_submissions', []);
-      subs.push({
-        id: generateId(),
-        formType: 'Career',
-        name,
-        email,
-        phone,
-        position: jobTitle,
-        service,
-        resumeName,
-        resumeData: resumeBase64 || '',
-        read: false,
-        createdAt: new Date().toISOString(),
-      });
+      subs.push(entry);
       setData('chaitra_submissions', subs);
       showGooglePopup('Thank you! Your application has been received.');
       closeApplyForm();
       formEl.reset();
     }
 
+    const base = {
+      id: generateId(),
+      formType: 'Career',
+      name, email, phone,
+      position: jobTitle,
+      service,
+      read: false,
+      createdAt: new Date().toISOString(),
+    };
+
     if (resumeFile) {
       const reader = new FileReader();
       reader.onload = (ev) => {
-        saveSubmission(ev.target.result);
+        doSave({ ...base, resumeName: resumeFile.name, resumeData: ev.target.result });
+      };
+      reader.onerror = () => {
+        doSave({ ...base, resumeName: resumeFile.name, resumeData: '' });
       };
       reader.readAsDataURL(resumeFile);
     } else {
-      saveSubmission('');
+      doSave({ ...base, resumeName: '', resumeData: '' });
     }
   });
 }
